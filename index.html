@@ -217,6 +217,41 @@
       margin-top: 20px;
     }
     .gallery-note strong { color: var(--green-dark); }
+    .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid #e5eee7;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card p {
+  color: var(--green-dark);
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+
+@media (max-width: 650px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
     .contact-item { background: #f8fbf8; border: 1px solid #e5eee7; border-radius: 12px; padding: 17px; }
     .contact-item strong { display: block; color: var(--green-dark); margin-bottom: 4px; }
     .contact-item span { color: var(--muted); font-size: 14px; }
@@ -278,6 +313,33 @@
   </div>
 
   <main class="container">
+    <section id="galeri" class="panel">
+  <div class="section-heading">
+    <p class="kicker">Dokumentasi Yayasan</p>
+    <h2 class="section-title">Kegiatan Yayasan Darul Fikr Singkut</h2>
+    <p class="section-intro">
+      Dokumentasi kegiatan pendidikan, pembinaan santri,
+      dan aktivitas keagamaan Yayasan Darul Fikr Singkut.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="hsn.jpg" alt="Kegiatan Yayasan Darul Fikr">
+      <p>Kegiatan Yayasan</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="kegiatan%201.jpg" alt="Kegiatan pendidikan">
+      <p>Kegiatan Pendidikan</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="kegiatan%20khataman.jpg" alt="Kegiatan khataman">
+      <p>Kegiatan Khataman</p>
+    </div>
+  </div>
+</section>
     <section id="profil" class="panel history">
       <div class="section-heading">
         <p class="kicker">Mengenal Kami</p>
@@ -355,17 +417,7 @@
       </div>
     </section>
 
-    <section id="galeri" class="panel">
-      <div class="section-heading">
-        <p class="kicker">Dokumentasi</p>
-        <h2 class="section-title">Galeri Kegiatan</h2>
-        <p class="section-intro">Dokumentasi kegiatan belajar, keagamaan, dan aktivitas peserta didik Yayasan Darul Fikr Singkut.</p>
-      </div>
-      <div class="gallery-note">
-        <strong>Area galeri foto</strong><br>
-        Foto kegiatan dapat ditambahkan pada bagian ini. Gunakan foto asli kegiatan yayasan agar informasi yang ditampilkan akurat.
-      </div>
-    </section>
+    
 
     <section id="kontak" class="panel">
       <div class="section-heading">
