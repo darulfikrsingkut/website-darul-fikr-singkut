@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website resmi Yayasan Darul Fikr Singkut">
+  <title>Yayasan Darul Fikr Singkut</title>
+  <style>
+    :root {
+      --hijau: #087443;
+      --hijau-gelap: #064b30;
+      --emas: #c9a33b;
+      --putih: #ffffff;
+      --latar: #f5f8f5;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #26352c;
+      background: var(--latar);
+    }
+    header {
+      background: var(--putih);
+      border-bottom: 3px solid var(--emas);
+      padding: 14px 6%;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo {
+      width: 75px;
+      height: 75px;
+      border: 2px solid var(--emas);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--hijau);
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    header h1 {
+      color: var(--hijau-gelap);
+      font-size: 22px;
+      margin: 0 0 5px;
+    }
+    header p { margin: 0; color: #777; font-size: 13px; }
+    nav {
+      background: var(--hijau);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 16px 18px;
+      font-size: 14px;
+    }
+    nav a:hover { background: var(--hijau-gelap); }
+    .hero {
+      background: linear-gradient(135deg, #075b38, #108452);
+      color: white;
+      text-align: center;
+      padding: 85px 20px;
+      border-bottom: 5px solid var(--emas);
+    }
+    .hero h2 { font-size: 34px; margin: 0 0 15px; }
+    .hero p { font-size: 17px; margin: 0; }
+    main {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+    section {
+      background: white;
+      padding: 28px;
+      margin-bottom: 22px;
+      border-radius: 8px;
+      border-left: 4px solid var(--emas);
+      min-height: 120px;
+    }
+    section h2 { color: var(--hijau); margin-top: 0; }
+    footer {
+      background: var(--hijau-gelap);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      header { padding: 12px; }
+      header h1 { font-size: 17px; }
+      .logo { width: 58px; height: 58px; }
+      nav a { padding: 12px 10px; font-size: 12px; }
+      .hero { padding: 60px 15px; }
+      .hero h2 { font-size: 25px; }
+      section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DARUL<br>FIKR</div>
+  <div>
+    <h1>YAYASAN DARUL FIKR SINGKUT</h1>
+    <p>RW 07 Cianjur Singkut</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#beranda">Beranda</a>
+  <a href="#profil">Profil</a>
+  <a href="#lembaga">Lembaga</a>
+  <a href="#program">Program/Kegiatan</a>
+  <a href="#galeri">Galeri</a>
+  <a href="#kontak">Kontak</a>
+</nav>
+
+<div class="hero" id="beranda">
+  <h2></h2>
+  <p></p>
+</div>
+
+<main>
+  <section id="profil">
+    <h2>Profil Yayasan</h2>
+  </section>
+
+  <section id="lembaga">
+    <h2>Lembaga Pendidikan</h2>
+  </section>
+
+  <section id="program">
+    <h2>Program dan Kegiatan</h2>
+  </section>
+
+  <section id="galeri">
+    <h2>Galeri</h2>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak</h2>
+  </section>
+</main>
+
+<footer>
+  © 2026 Yayasan Darul Fikr Singkut. Seluruh Hak Cipta Dilindungi.
+</footer>
+
+</body>
+</html>
