@@ -279,6 +279,14 @@
       .panel { padding: 21px 18px; }
       .cards { grid-template-columns: 1fr; }
     }
+
+    /* Komentar dan statistik pengunjung */
+    .visitor-bar { background:#f0f6f1; border:1px solid #dcebe0; border-radius:12px; padding:14px 18px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px 22px; color:var(--green-dark); font-weight:700; }
+    .visitor-bar img { height:24px; vertical-align:middle; }
+    .comment-note { color:var(--muted); font-size:14px; margin:0 0 16px; }
+    .comment-frame { width:100%; min-height:360px; border:1px solid #e5eee7; border-radius:12px; background:#fff; }
+    .setup-warning { background:#fff8e8; border:1px solid #ead9a4; color:#624c16; border-radius:10px; padding:12px 15px; font-size:13px; }
+
   </style>
 </head>
 <body>
@@ -300,6 +308,7 @@
     <a href="#lembaga">Lembaga</a>
     <a href="#program">Program/Kegiatan</a>
     <a href="#galeri">Galeri</a>
+    <a href="#komentar">Komentar</a>
     <a href="#kontak">Kontak</a>
   </nav>
 
@@ -309,6 +318,14 @@
       <h2>Membangun Generasi Berilmu, Beriman, dan Berakhlakul Karimah</h2>
       <p>Yayasan Darul Fikr Singkut Berkomitmen Menghadirkan Pendidikan Islam yang Berkualitas, Mandiri, dan Berakhlakul Karimah.</p>
       <a class="hero-link" href="#lembaga">Jelajahi Lembaga Pendidikan</a>
+    </div>
+  </div>
+
+
+  <div class="container" style="margin-top:22px;">
+    <div class="visitor-bar" aria-label="Statistik pengunjung">
+      <span>🌐 Statistik Pengunjung</span>
+      <span id="visitor-count">Jumlah kunjungan: sedang dimuat…</span>
     </div>
   </div>
 
@@ -419,6 +436,18 @@
 
     
 
+
+    <section id="komentar" class="panel">
+      <div class="section-heading">
+        <p class="kicker">Suara Pengunjung</p>
+        <h2 class="section-title">Buku Tamu dan Komentar</h2>
+        <p class="section-intro">Silakan sampaikan saran, masukan, atau pesan untuk Yayasan Darul Fikr Singkut dengan bahasa yang santun.</p>
+      </div>
+      <p class="comment-note">Komentar dikelola melalui akun GitHub. Pengunjung dapat masuk menggunakan akun GitHub untuk menulis komentar.</p>
+      <div id="giscus-container" class="comment-frame"></div>
+      <div id="giscus-setup" class="setup-warning" hidden>Kolom komentar belum diaktifkan. Pengelola perlu melengkapi pengaturan Giscus pada bagian kode website.</div>
+    </section>
+
     <section id="kontak" class="panel">
       <div class="section-heading">
         <p class="kicker">Hubungi Kami</p>
@@ -451,5 +480,50 @@
     <p>Jl. Pinang RW 07 Cianjur Singkut</p>
     <p class="small">© 2026 Yayasan Darul Fikr Singkut. Seluruh Hak Cipta Dilindungi.</p>
   </footer>
+
+<script>
+  // STATISTIK PENGUNJUNG: ganti YOUR-SITE-CODE dengan kode situs dari akun GoatCounter.
+  // Setelah kode diganti, jumlah kunjungan akan diambil dari statistik GoatCounter.
+  (function () {
+    const siteCode = 'YOUR-SITE-CODE';
+    const countEl = document.getElementById('visitor-count');
+    if (!siteCode || siteCode === 'YOUR-SITE-CODE') {
+      countEl.textContent = 'Statistik belum dihubungkan';
+      return;
+    }
+    const path = encodeURIComponent('/');
+    fetch('https://' + siteCode + '.goatcounter.com/counter/' + path + '.json')
+      .then(response => { if (!response.ok) throw new Error('Gagal memuat'); return response.json(); })
+      .then(data => { countEl.textContent = 'Jumlah kunjungan: ' + Number(data.count || 0).toLocaleString('id-ID'); })
+      .catch(() => { countEl.textContent = 'Statistik pengunjung tersedia melalui dashboard admin'; });
+  })();
+
+  // KOMENTAR GISCUS: lengkapi REPO_ID dan CATEGORY_ID dari https://giscus.app
+  (function () {
+    const repoId = 'GISCUS_REPO_ID';
+    const categoryId = 'GISCUS_CATEGORY_ID';
+    if (repoId === 'GISCUS_REPO_ID' || categoryId === 'GISCUS_CATEGORY_ID') {
+      document.getElementById('giscus-setup').hidden = false;
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.setAttribute('data-repo', 'darulfikrsingkut/website-darul-fikr-singkut');
+    script.setAttribute('data-repo-id', repoId);
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', categoryId);
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang', 'id');
+    document.getElementById('giscus-container').appendChild(script);
+  })();
+</script>
+
 </body>
 </html>
