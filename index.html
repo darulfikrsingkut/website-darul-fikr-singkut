@@ -280,13 +280,146 @@
       .cards { grid-template-columns: 1fr; }
     }
 
-    /* Komentar dan statistik pengunjung */
-    .visitor-bar { background:#f0f6f1; border:1px solid #dcebe0; border-radius:12px; padding:14px 18px; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px 22px; color:var(--green-dark); font-weight:700; }
-    .visitor-bar img { height:24px; vertical-align:middle; }
-    .comment-note { color:var(--muted); font-size:14px; margin:0 0 16px; }
-    .comment-frame { width:100%; min-height:360px; border:1px solid #e5eee7; border-radius:12px; background:#fff; }
-    .setup-warning { background:#fff8e8; border:1px solid #ead9a4; color:#624c16; border-radius:10px; padding:12px 15px; font-size:13px; }
+    /* Penyegaran tampilan: hijau NU, emas hangat, dan ruang putih */
+    :root {
+      --green: #087a4b;
+      --green-dark: #075638;
+      --green-deep: #043b2a;
+      --green-soft: #edf7f0;
+      --gold: #d3ad4b;
+      --gold-light: #f2e4b7;
+      --paper: #f3f7f3;
+      --ink: #20372b;
+      --muted: #68796e;
+      --shadow: 0 16px 42px rgba(4,59,42,.10);
+      --radius: 20px;
+    }
+    body { background: linear-gradient(180deg,#f7faf7 0%,#eef5ef 100%); }
+    .topline { height: 6px; background: linear-gradient(90deg,#064b30 0%,#d3ad4b 48%,#0b8753 100%); }
+    header { padding-top: 17px; padding-bottom: 17px; }
+    .logo { width: 86px; height: 86px; padding: 5px; border-radius: 18px; background: #f2f8f3; box-shadow: 0 6px 18px rgba(5,75,48,.09); }
+    .brand h1 { letter-spacing: .8px; font-weight: 800; }
+    .brand p { letter-spacing: .25px; }
+    nav { background: rgba(5,86,56,.97); backdrop-filter: blur(12px); border-bottom: 2px solid rgba(211,173,75,.75); }
+    nav a { padding: 15px 19px; position: relative; }
+    nav a:after { content:''; position:absolute; left:19px; right:19px; bottom:7px; height:2px; background:var(--gold-light); transform:scaleX(0); transform-origin:left; transition:transform .22s ease; }
+    nav a:hover:after, nav a:focus:after { transform:scaleX(1); }
+    .hero { text-align:left; padding: clamp(78px,10vw,132px) 24px; background: radial-gradient(circle at 82% 18%,rgba(211,173,75,.24),transparent 24%), radial-gradient(circle at 8% 88%,rgba(255,255,255,.10),transparent 25%), linear-gradient(118deg,#033b2a 0%,#087a4b 62%,#15915c 100%); }
+    .hero-content { max-width: 1120px; }
+    .hero h2 { margin-left:0; font-weight:800; letter-spacing:-.7px; text-shadow:0 3px 20px rgba(0,0,0,.12); }
+    .hero p { margin-left:0; line-height:1.85; }
+    .eyebrow { background:rgba(255,255,255,.08); backdrop-filter:blur(5px); }
+    .hero-link { padding:13px 25px; border:1px solid rgba(255,255,255,.25); box-shadow:0 8px 22px rgba(0,0,0,.16); transition:transform .2s,background .2s; }
+    .hero-link:hover { transform:translateY(-3px); }
+    main { padding-top: 48px; }
+    .panel { border:1px solid #e5eee7; border-top:4px solid var(--gold); border-radius:22px; box-shadow:0 12px 36px rgba(5,58,37,.065); }
+    .section-heading { position:relative; padding-left:15px; }
+    .section-heading:before { content:''; position:absolute; left:0; top:4px; bottom:3px; width:4px; border-radius:8px; background:linear-gradient(var(--gold),#f0dfaa); }
+    .section-heading .kicker { color:#a17a20; letter-spacing:1.8px; }
+    h2.section-title { letter-spacing:-.35px; }
+    .school-card { position:relative; overflow:hidden; border:1px solid #e4eee6; border-radius:18px; background:linear-gradient(145deg,#fff 0%,#fbfdfb 100%); box-shadow:0 8px 24px rgba(5,58,37,.055); }
+    .school-card:before { content:''; position:absolute; width:95px; height:95px; right:-48px; top:-48px; border-radius:50%; background:rgba(211,173,75,.12); }
+    .school-card:hover { transform:translateY(-6px); box-shadow:0 18px 34px rgba(5,58,37,.12); border-color:#c9dfcf; }
+    .school-icon { width:50px; height:50px; border-radius:15px; background:linear-gradient(145deg,#e4f2e8,#f5f9f5); box-shadow:inset 0 0 0 1px #d7e9dc; }
+    .tahun { background:#fbf4df; color:#806019; border:1px solid #f0e2b5; }
+    .info-card { background:linear-gradient(145deg,#f0f8f2,#e8f3eb); border:1px solid #dcebe0; border-radius:16px; transition:transform .2s,box-shadow .2s; }
+    .info-card:hover { transform:translateY(-4px); box-shadow:0 12px 24px rgba(5,58,37,.08); }
+    .gallery-card { border-radius:18px; transition:transform .22s,box-shadow .22s; }
+    .gallery-card:hover { transform:translateY(-5px); box-shadow:0 16px 30px rgba(5,58,37,.13); }
+    .gallery-card img { transition:transform .45s ease; }
+    .gallery-card:hover img { transform:scale(1.035); }
+    .contact-item { border-radius:15px; background:linear-gradient(145deg,#fbfdfb,#f1f7f2); }
+    footer { background:radial-gradient(circle at 85% 0%,rgba(211,173,75,.18),transparent 28%),linear-gradient(120deg,#033b2a,#075638); }
+    .visitor-highlight { width:min(1120px,calc(100% - 40px)); margin:-24px auto 0; position:relative; z-index:3; display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .highlight-item { padding:17px 20px; background:#fff; border:1px solid #e3eee5; border-radius:16px; box-shadow:0 12px 28px rgba(4,59,42,.09); display:flex; align-items:center; gap:13px; }
+    .highlight-icon { width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:13px;background:#eaf5ed;color:#075638;font-size:21px; }
+    .highlight-item strong { display:block;color:#075638;font-size:19px;line-height:1.25; }
+    .highlight-item span { display:block;color:#718076;font-size:12px; }
+    .back-top { position:fixed;right:20px;bottom:20px;z-index:30;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#075638;color:#fff;text-decoration:none;font-size:20px;box-shadow:0 7px 20px rgba(4,59,42,.25);border:2px solid #d3ad4b; }
+    .back-top:hover { background:#0b8753; }
+    @media (max-width:650px) {
+      header { padding:11px 14px; }
+      .logo { width:62px;height:62px; }
+      .hero { text-align:center; }
+      .hero h2,.hero p { margin-left:auto; }
+      .visitor-highlight { width:calc(100% - 28px); grid-template-columns:1fr; margin-top:-15px; gap:9px; }
+      .highlight-item { padding:12px 15px; }
+      .gallery-grid { grid-template-columns:1fr; }
+      .back-top { right:14px;bottom:14px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *,*:before,*:after { scroll-behavior:auto !important; transition:none !important; } }
 
+
+    /* Penyempurnaan identitas visual: gradasi hijau NU dan ornamen geometri Islami */
+    .topline {
+      height: 7px;
+      background: linear-gradient(90deg, #063b29 0%, #c9a33b 24%, #f2e2ad 50%, #c9a33b 76%, #063b29 100%);
+    }
+    header {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 112px;
+      padding-top: 17px;
+      padding-bottom: 17px;
+      background:
+        radial-gradient(ellipse at 12% 10%, rgba(255,255,255,.13), transparent 34%),
+        radial-gradient(ellipse at 88% 100%, rgba(201,163,59,.19), transparent 32%),
+        linear-gradient(115deg, #043d29 0%, #087447 48%, #075333 100%);
+      border-bottom: 4px solid #c9a33b;
+      box-shadow: 0 5px 18px rgba(3,45,29,.18);
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -50%;
+      opacity: .16;
+      background-image:
+        repeating-linear-gradient(45deg, transparent 0 28px, rgba(242,226,173,.55) 29px 30px, transparent 31px 58px),
+        repeating-linear-gradient(-45deg, transparent 0 28px, rgba(242,226,173,.42) 29px 30px, transparent 31px 58px);
+      transform: rotate(-7deg);
+      pointer-events: none;
+    }
+    header::after {
+      content: "✧  ۞  ✧";
+      position: absolute;
+      right: max(22px, calc((100% - 1120px) / 2));
+      bottom: 4px;
+      color: rgba(242,226,173,.27);
+      font-size: 34px;
+      letter-spacing: 13px;
+      pointer-events: none;
+    }
+    .logo {
+      position: relative;
+      z-index: 1;
+      width: 82px;
+      height: 82px;
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #fffdf5, #f0dfad);
+      border: 2px solid #d8b957;
+      box-shadow: 0 0 0 4px rgba(255,255,255,.13), 0 5px 14px rgba(0,0,0,.24);
+    }
+    .brand { position: relative; z-index: 1; }
+    .brand h1 {
+      color: #fffdf4;
+      text-shadow: 0 2px 5px rgba(0,0,0,.24);
+      letter-spacing: .8px;
+    }
+    .brand p {
+      color: #f2e2ad;
+      font-size: 13px;
+      letter-spacing: .5px;
+    }
+    @media (max-width: 650px) {
+      header { min-height: 96px; gap: 13px; padding-top: 13px; padding-bottom: 13px; }
+      .logo { width: 68px; height: 68px; }
+      .brand h1 { font-size: clamp(15px, 4vw, 20px); }
+      .brand p { font-size: 12px; }
+      header::after { right: 8px; font-size: 22px; letter-spacing: 5px; opacity: .7; }
+    }
   </style>
 </head>
 <body>
@@ -308,7 +441,6 @@
     <a href="#lembaga">Lembaga</a>
     <a href="#program">Program/Kegiatan</a>
     <a href="#galeri">Galeri</a>
-    <a href="#komentar">Komentar</a>
     <a href="#kontak">Kontak</a>
   </nav>
 
@@ -321,12 +453,10 @@
     </div>
   </div>
 
-
-  <div class="container" style="margin-top:22px;">
-    <div class="visitor-bar" aria-label="Statistik pengunjung">
-      <span>🌐 Statistik Pengunjung</span>
-      <span id="visitor-count">Jumlah kunjungan: sedang dimuat…</span>
-    </div>
+  <div class="visitor-highlight" aria-label="Sekilas Yayasan">
+    <div class="highlight-item"><div class="highlight-icon">🏫</div><div><strong>5 Unit Pendidikan</strong><span>Dalam satu naungan yayasan</span></div></div>
+    <div class="highlight-item"><div class="highlight-icon">🌿</div><div><strong>Sejak 2011</strong><span>Perjalanan pelayanan pendidikan</span></div></div>
+    <div class="highlight-item"><div class="highlight-icon">📚</div><div><strong>Ilmu dan Akhlak</strong><span>Membangun generasi berkarakter</span></div></div>
   </div>
 
   <main class="container">
@@ -436,18 +566,6 @@
 
     
 
-
-    <section id="komentar" class="panel">
-      <div class="section-heading">
-        <p class="kicker">Suara Pengunjung</p>
-        <h2 class="section-title">Buku Tamu dan Komentar</h2>
-        <p class="section-intro">Silakan sampaikan saran, masukan, atau pesan untuk Yayasan Darul Fikr Singkut dengan bahasa yang santun.</p>
-      </div>
-      <p class="comment-note">Komentar dikelola melalui akun GitHub. Pengunjung dapat masuk menggunakan akun GitHub untuk menulis komentar.</p>
-      <div id="giscus-container" class="comment-frame"></div>
-      <div id="giscus-setup" class="setup-warning" hidden>Kolom komentar belum diaktifkan. Pengelola perlu melengkapi pengaturan Giscus pada bagian kode website.</div>
-    </section>
-
     <section id="kontak" class="panel">
       <div class="section-heading">
         <p class="kicker">Hubungi Kami</p>
@@ -480,50 +598,6 @@
     <p>Jl. Pinang RW 07 Cianjur Singkut</p>
     <p class="small">© 2026 Yayasan Darul Fikr Singkut. Seluruh Hak Cipta Dilindungi.</p>
   </footer>
-
-<script>
-  // STATISTIK PENGUNJUNG: ganti YOUR-SITE-CODE dengan kode situs dari akun GoatCounter.
-  // Setelah kode diganti, jumlah kunjungan akan diambil dari statistik GoatCounter.
-  (function () {
-    const siteCode = 'YOUR-SITE-CODE';
-    const countEl = document.getElementById('visitor-count');
-    if (!siteCode || siteCode === 'YOUR-SITE-CODE') {
-      countEl.textContent = 'Statistik belum dihubungkan';
-      return;
-    }
-    const path = encodeURIComponent('/');
-    fetch('https://' + siteCode + '.goatcounter.com/counter/' + path + '.json')
-      .then(response => { if (!response.ok) throw new Error('Gagal memuat'); return response.json(); })
-      .then(data => { countEl.textContent = 'Jumlah kunjungan: ' + Number(data.count || 0).toLocaleString('id-ID'); })
-      .catch(() => { countEl.textContent = 'Statistik pengunjung tersedia melalui dashboard admin'; });
-  })();
-
-  // KOMENTAR GISCUS: lengkapi REPO_ID dan CATEGORY_ID dari https://giscus.app
-  (function () {
-    const repoId = 'GISCUS_REPO_ID';
-    const categoryId = 'GISCUS_CATEGORY_ID';
-    if (repoId === 'GISCUS_REPO_ID' || categoryId === 'GISCUS_CATEGORY_ID') {
-      document.getElementById('giscus-setup').hidden = false;
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = 'https://giscus.app/client.js';
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-    script.setAttribute('data-repo', 'darulfikrsingkut/website-darul-fikr-singkut');
-    script.setAttribute('data-repo-id', repoId);
-    script.setAttribute('data-category', 'Announcements');
-    script.setAttribute('data-category-id', categoryId);
-    script.setAttribute('data-mapping', 'pathname');
-    script.setAttribute('data-strict', '0');
-    script.setAttribute('data-reactions-enabled', '1');
-    script.setAttribute('data-emit-metadata', '0');
-    script.setAttribute('data-input-position', 'top');
-    script.setAttribute('data-theme', 'light');
-    script.setAttribute('data-lang', 'id');
-    document.getElementById('giscus-container').appendChild(script);
-  })();
-</script>
-
+<a class="back-top" href="#beranda" aria-label="Kembali ke atas">↑</a>
 </body>
 </html>
