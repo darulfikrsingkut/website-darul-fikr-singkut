@@ -460,6 +460,110 @@
     .comment-empty { color:var(--muted); padding:15px; border:1px dashed #cbded0; border-radius:12px; text-align:center; }
     @media(max-width:650px) { .comment-auth { align-items:stretch; } .comment-btn { width:100%; } }
 
+
+
+    /* Tampilan baru lima lembaga di bagian depan beranda */
+    #lembaga {
+      margin-top: 0;
+      background: linear-gradient(145deg, #ffffff 0%, #f7fbf7 100%);
+    }
+    #lembaga .section-heading { margin-bottom: 8px; }
+    #lembaga .cards {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 26px;
+      align-items: stretch;
+    }
+    #lembaga .school-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+      min-height: 100%;
+      padding: 22px 16px 20px;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e5eadb;
+      border-top: 4px solid #c9a33b;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(5,58,37,.07);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    #lembaga .school-card:hover {
+      transform: translateY(-6px);
+      border-color: #d3ad4b;
+      box-shadow: 0 16px 30px rgba(5,58,37,.13);
+    }
+    #lembaga .school-card:focus-visible {
+      outline: 3px solid #d3ad4b;
+      outline-offset: 4px;
+    }
+    #lembaga .school-icon {
+      width: 132px;
+      height: 132px;
+      flex: 0 0 132px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 17px;
+      padding: 10px;
+      border: 1px solid #e7d7a5;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #fff 0%, #f8f7ef 100%);
+      box-shadow: 0 5px 15px rgba(5,58,37,.07);
+    }
+    #lembaga .school-icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 0;
+    }
+    #lembaga .school-card h3 {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    #lembaga .tahun { margin: 0 0 10px; }
+    #lembaga .school-status {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 6px 11px;
+      border: 1px solid #d5e8da;
+      border-radius: 20px;
+      background: #edf7f0;
+      color: #075638;
+      font-size: 11px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+    #lembaga .school-card > p:last-child {
+      margin: auto 0 0;
+      color: #68796e;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    @media (max-width: 1050px) {
+      #lembaga .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 650px) {
+      #lembaga .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      #lembaga .school-card { padding: 17px 11px; }
+      #lembaga .school-icon { width: 112px; height: 112px; flex-basis: 112px; padding: 8px; }
+      #lembaga .school-card h3 { min-height: 52px; font-size: 14px; }
+      #lembaga .school-card > p:last-child { font-size: 11px; }
+    }
+    @media (max-width: 370px) {
+      #lembaga .cards { grid-template-columns: 1fr; }
+      #lembaga .school-icon { width: 125px; height: 125px; flex-basis: 125px; }
+    }
+
   </style>
 </head>
 <body>
@@ -477,10 +581,10 @@
 
   <nav aria-label="Navigasi utama">
     <a href="#beranda">Beranda</a>
-    <a href="#profil">Profil</a>
     <a href="#lembaga">Lembaga</a>
-    <a href="#program">Program/Kegiatan</a>
+    <a href="#profil">Profil</a>
     <a href="#galeri">Galeri</a>
+    <a href="#program">Program/Kegiatan</a>
     <a href="#kontak">Kontak</a>
   </nav>
 
@@ -500,6 +604,62 @@
   </div>
 
   <main class="container">
+    <section id="lembaga" class="panel">
+      <div class="section-heading">
+        <p class="kicker">Unit Pendidikan</p>
+        <h2 class="section-title">Lembaga Pendidikan</h2>
+        <p class="section-intro">Yayasan Darul Fikr Singkut menaungi lima lembaga pendidikan yang berkomitmen memberikan pelayanan pendidikan dan membangun generasi berilmu, beriman, serta berakhlakul karimah.</p>
+      </div>
+      <div class="cards">
+        <a class="school-card school-link" href="https://website-mts-al-fikr.pages.dev" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website MTs Al-Fikr Cianjur Singkut">
+          <div class="school-icon">
+            <img src="icon-mts.png.png" alt="Logo MTs Al-Fikr">
+          </div>
+          <h3>MTs Al-Fikr Cianjur Singkut</h3>
+          <p class="tahun">Berdiri Tahun 2011</p>
+          <span class="school-status">Kunjungi Website MTs ↗</span>
+          <p>Madrasah Tsanawiyah yang menyelenggarakan pendidikan jenjang menengah pertama dengan perpaduan ilmu pengetahuan umum dan keagamaan.</p>
+        </a>
+        <article class="school-card">
+          <div class="school-icon">
+  <img src="icon-ra.png.png" alt="Ikon RA Darul Fikr">
+</div>
+          <h3>RA Darul Fikr</h3>
+          <p class="tahun">Berdiri Tahun 2018</p>
+          <span class="school-status">Website Segera Hadir</span>
+          <p>Raudhatul Athfal Darul Fikr merupakan lembaga pendidikan anak usia dini berciri khas Islam yang menanamkan dasar keimanan, akhlak, dan kemandirian.</p>
+        </article>
+        <article class="school-card">
+          <div class="school-icon">
+  <img src="icon-rtq.png.png" alt="Ikon RTQ">
+</div>
+          <h3>Raudhatut Tarbiyatil Quran (RTQ)</h3>
+          <p class="tahun">Berdiri Tahun 2019</p>
+          <span class="school-status">Website Segera Hadir</span>
+          <p>Lembaga pendidikan Al-Qur'an yang membimbing generasi muda agar mampu membaca, memahami, dan mencintai Al-Qur'an.</p>
+        </article>
+        <article class="school-card">
+          <div class="school-icon">
+  <img src="icon-ma.png.png" alt="Ikon MA Darul Fikr">
+</div>
+          <h3>MA Darul Fikr</h3>
+          <p class="tahun">Berdiri Tahun 2023</p>
+          <span class="school-status">Website Segera Hadir</span>
+          <p>Madrasah Aliyah yang menyelenggarakan pendidikan jenjang menengah atas dengan penguatan ilmu pengetahuan dan nilai-nilai Islam.</p>
+        </article>
+        <article class="school-card">
+          <div class="school-icon">
+  <img src="icon-ponpes.png.png" alt="Ikon Pondok Pesantren Darul Fikr">
+</div>
+          <h3>Pondok Pesantren Darul Fikr</h3>
+          <p class="tahun">Berdiri Tahun 2024</p>
+          <span class="school-status">Website Segera Hadir</span>
+          <p>Lembaga pendidikan Islam berbasis pesantren yang berfokus pada pembinaan ilmu agama, ibadah, kedisiplinan, dan akhlakul karimah santri.</p>
+        </article>
+      </div>
+    </section>
+
+
     <section id="galeri" class="panel">
   <div class="section-heading">
     <p class="kicker">Dokumentasi Yayasan</p>
@@ -536,56 +696,6 @@
       <p>Yayasan Darul Fikr Singkut didirikan pada tahun 2016 atas dasar dukungan dan aspirasi masyarakat yang mengharapkan hadirnya lembaga pendidikan Islam yang lebih dekat, mudah dijangkau, serta terjangkau dari segi biaya.</p>
       <p>Keberadaan yayasan ini diharapkan dapat memberikan kesempatan yang lebih luas kepada masyarakat, khususnya anak-anak dan generasi muda di lingkungan Singkut dan sekitarnya, untuk memperoleh pendidikan yang layak tanpa terkendala jarak maupun kemampuan ekonomi.</p>
       <p>Dengan semangat kebersamaan dan kepedulian terhadap pendidikan, Yayasan Darul Fikr Singkut berkomitmen untuk ikut berperan dalam mencerdaskan generasi bangsa, membangun karakter Islami, serta menanamkan nilai-nilai keagamaan dan akhlakul karimah.</p>
-    </section>
-
-    <section id="lembaga" class="panel">
-      <div class="section-heading">
-        <p class="kicker">Unit Pendidikan</p>
-        <h2 class="section-title">Lembaga Pendidikan</h2>
-        <p class="section-intro">Yayasan Darul Fikr Singkut menaungi lima lembaga pendidikan yang berkomitmen memberikan pelayanan pendidikan dan membangun generasi berilmu, beriman, serta berakhlakul karimah.</p>
-      </div>
-      <div class="cards">
-        <article class="school-card">
-          <div class="school-icon">
-  <img src="icon-mts.png.png" alt="Ikon MTs Al-Fikr">
-</div>
-          <h3>MTs Al-Fikr Cianjur Singkut</h3>
-          <p class="tahun">Berdiri Tahun 2011</p>
-          <p>Madrasah Tsanawiyah yang menyelenggarakan pendidikan jenjang menengah pertama dengan perpaduan ilmu pengetahuan umum dan keagamaan.</p>
-        </article>
-        <article class="school-card">
-          <div class="school-icon">
-  <img src="icon-ra.png.png" alt="Ikon RA Darul Fikr">
-</div>
-          <h3>RA Darul Fikr</h3>
-          <p class="tahun">Berdiri Tahun 2018</p>
-          <p>Raudhatul Athfal Darul Fikr merupakan lembaga pendidikan anak usia dini berciri khas Islam yang menanamkan dasar keimanan, akhlak, dan kemandirian.</p>
-        </article>
-        <article class="school-card">
-          <div class="school-icon">
-  <img src="icon-rtq.png.png" alt="Ikon RTQ">
-</div>
-          <h3>Raudhatut Tarbiyatil Quran (RTQ)</h3>
-          <p class="tahun">Berdiri Tahun 2019</p>
-          <p>Lembaga pendidikan Al-Qur'an yang membimbing generasi muda agar mampu membaca, memahami, dan mencintai Al-Qur'an.</p>
-        </article>
-        <article class="school-card">
-          <div class="school-icon">
-  <img src="icon-ma.png.png" alt="Ikon MA Darul Fikr">
-</div>
-          <h3>MA Darul Fikr</h3>
-          <p class="tahun">Berdiri Tahun 2023</p>
-          <p>Madrasah Aliyah yang menyelenggarakan pendidikan jenjang menengah atas dengan penguatan ilmu pengetahuan dan nilai-nilai Islam.</p>
-        </article>
-        <article class="school-card">
-          <div class="school-icon">
-  <img src="icon-ponpes.png.png" alt="Ikon Pondok Pesantren Darul Fikr">
-</div>
-          <h3>Pondok Pesantren Darul Fikr</h3>
-          <p class="tahun">Berdiri Tahun 2024</p>
-          <p>Lembaga pendidikan Islam berbasis pesantren yang berfokus pada pembinaan ilmu agama, ibadah, kedisiplinan, dan akhlakul karimah santri.</p>
-        </article>
-      </div>
     </section>
 
     <section id="program" class="panel">
