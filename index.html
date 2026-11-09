@@ -183,8 +183,13 @@ nav a:hover,nav a:focus{background:var(--dark);outline:none}
   padding:4px;
   border-radius:12px;
   background:#f7faf7;
+  order:2;
 }
-.hero-school-info{min-width:0}
+.hero-school-info{
+  min-width:0;
+  order:1;
+  flex:1;
+}
 .hero-school-info strong{
   display:block;
   color:var(--dark);
@@ -205,7 +210,61 @@ nav a:hover,nav a:focus{background:var(--dark);outline:none}
   font-style:normal;
   margin-top:3px;
 }
-.hero-school:not(.school-link) .hero-school-info em{color:#8a6b20}
+
+/* WARNA KHUSUS LIMA KARTU LEMBAGA */
+
+/* 1. MTs Al-Fikr - Hijau muda */
+.school-mts{
+  background:linear-gradient(135deg,#eaf8ed,#d7efdd);
+  border-color:#a8d5b3;
+}
+.school-mts .hero-school-info strong{color:#075638}
+.school-mts .hero-school-info em{color:#087a4b}
+
+/* 2. RA Darul Fikr - Krem keemasan */
+.school-ra{
+  background:linear-gradient(135deg,#fff6e5,#f8e8c5);
+  border-color:#e7cf91;
+}
+.school-ra .hero-school-info strong{color:#78551c}
+.school-ra .hero-school-info em{color:#8a6b20}
+
+/* 3. RTQ - Biru lembut */
+.school-rtq{
+  background:linear-gradient(135deg,#edf2ff,#dfe8fb);
+  border-color:#bdcbed;
+}
+.school-rtq .hero-school-info strong{color:#294b82}
+.school-rtq .hero-school-info em{color:#365d9d}
+
+/* 4. MA Darul Fikr - Marun muda */
+.school-ma{
+  background:linear-gradient(135deg,#fff0f2,#f4dce3);
+  border-color:#dfb4c1;
+}
+.school-ma .hero-school-info strong{color:#7c263e}
+.school-ma .hero-school-info em{color:#963e57}
+
+/* 5. Pondok Pesantren - Hijau tua, tulisan putih dan emas */
+.school-ponpes{
+  background:linear-gradient(135deg,#075638,#033b2a);
+  border-color:#c5a64e;
+}
+.school-ponpes .hero-school-info strong{color:#fffdf4}
+.school-ponpes .hero-school-info span{color:#e1eee6}
+.school-ponpes .hero-school-info em{color:#f2d77e}
+.school-ponpes img{background:#fffdf4}
+
+/* Efek hover kartu */
+.school-mts:hover,
+.school-ra:hover,
+.school-rtq:hover,
+.school-ma:hover{
+  filter:brightness(1.025);
+}
+.school-ponpes:hover{
+  background:linear-gradient(135deg,#086844,#044b35);
+}
 
 main{padding:43px 0 20px}
 section{margin-bottom:27px}
@@ -319,6 +378,7 @@ footer .small{color:#d6e7dc;font-size:12px}
   text-decoration:none;font-size:20px;
   box-shadow:0 7px 20px rgba(4,59,42,.25);border:2px solid var(--gold);
 }
+
 @media(max-width:850px){
   .hero-layout{grid-template-columns:1fr;gap:30px}
   .hero-content{text-align:center}
@@ -384,7 +444,7 @@ footer .small{color:#d6e7dc;font-size:12px}
 
     <div class="hero-schools" id="lembaga" aria-label="Lima lembaga pendidikan Yayasan Darul Fikr">
 
-      <a class="hero-school school-link"
+      <a class="hero-school school-link school-mts"
          href="https://website-mts-al-fikr.pages.dev"
          target="_blank" rel="noopener noreferrer"
          aria-label="Kunjungi website MTs Al-Fikr Cianjur Singkut">
@@ -396,7 +456,7 @@ footer .small{color:#d6e7dc;font-size:12px}
         </div>
       </a>
 
-      <div class="hero-school">
+      <div class="hero-school school-ra">
         <img src="icon-ra.png.png" alt="Logo RA Darul Fikr">
         <div class="hero-school-info">
           <strong>RA Darul Fikr</strong>
@@ -405,7 +465,7 @@ footer .small{color:#d6e7dc;font-size:12px}
         </div>
       </div>
 
-      <div class="hero-school">
+      <div class="hero-school school-rtq">
         <img src="icon-rtq.png.png" alt="Logo RTQ Darul Fikr">
         <div class="hero-school-info">
           <strong>Raudhatut Tarbiyatil Quran (RTQ)</strong>
@@ -414,7 +474,7 @@ footer .small{color:#d6e7dc;font-size:12px}
         </div>
       </div>
 
-      <div class="hero-school">
+      <div class="hero-school school-ma">
         <img src="icon-ma.png.png" alt="Logo MA Darul Fikr">
         <div class="hero-school-info">
           <strong>MA Darul Fikr</strong>
@@ -423,7 +483,7 @@ footer .small{color:#d6e7dc;font-size:12px}
         </div>
       </div>
 
-      <div class="hero-school">
+      <div class="hero-school school-ponpes">
         <img src="icon-ponpes.png.png" alt="Logo Pondok Pesantren Darul Fikr">
         <div class="hero-school-info">
           <strong>Pondok Pesantren Darul Fikr</strong>
