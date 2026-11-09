@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,281 +7,8 @@
   <meta name="description" content="Website resmi Yayasan Darul Fikr Singkut - membangun generasi berilmu, beriman, dan berakhlakul karimah.">
   <meta name="theme-color" content="#075c3b">
   <title>Yayasan Darul Fikr Singkut</title>
+
   <style>
-    :root {
-      --green: #087443;
-      --green-dark: #064b30;
-      --green-deep: #033b27;
-      --green-soft: #eaf4ee;
-      --gold: #c9a33b;
-      --gold-light: #ead9a4;
-      --white: #fff;
-      --ink: #26352c;
-      --muted: #66756b;
-      --paper: #f5f8f5;
-      --shadow: 0 12px 30px rgba(5, 58, 37, .09);
-      --radius: 16px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--paper);
-      line-height: 1.7;
-    }
-    a { color: inherit; }
-    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
-
-    .topline { height: 5px; background: linear-gradient(90deg, var(--green-dark), var(--gold), var(--green)); }
-    header {
-      background: var(--white);
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 13px max(20px, calc((100% - 1120px) / 2));
-      border-bottom: 1px solid #e8eee9;
-    }
-    .logo {
-      width: 78px;
-      height: 78px;
-      object-fit: contain;
-      flex: 0 0 auto;
-    }
-    .brand h1 {
-      color: var(--green-dark);
-      font-size: clamp(17px, 2.4vw, 23px);
-      line-height: 1.25;
-      margin: 0 0 4px;
-      letter-spacing: .3px;
-    }
-    .brand p { margin: 0; color: var(--muted); font-size: 13px; }
-
-    nav {
-      background: var(--green);
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    }
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      padding: 13px 17px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: background .2s ease;
-    }
-    nav a:hover, nav a:focus { background: var(--green-dark); outline: none; }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      color: var(--white);
-      text-align: center;
-      padding: clamp(65px, 9vw, 112px) 20px;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(201,163,59,.18), transparent 25%),
-        radial-gradient(circle at 88% 80%, rgba(255,255,255,.10), transparent 24%),
-        linear-gradient(135deg, var(--green-deep), #0b8050);
-      border-bottom: 5px solid var(--gold);
-    }
-    .hero:before, .hero:after {
-      content: "";
-      position: absolute;
-      width: 230px;
-      height: 230px;
-      border: 1px solid rgba(234,217,164,.2);
-      transform: rotate(45deg);
-      pointer-events: none;
-    }
-    .hero:before { left: -150px; top: -130px; }
-    .hero:after { right: -150px; bottom: -150px; }
-    .hero-content { position: relative; z-index: 1; max-width: 850px; margin: auto; }
-    .eyebrow {
-      display: inline-block;
-      color: var(--gold-light);
-      border: 1px solid rgba(234,217,164,.55);
-      border-radius: 30px;
-      padding: 5px 15px;
-      margin-bottom: 18px;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-    .hero h2 {
-      font-size: clamp(30px, 5vw, 48px);
-      line-height: 1.18;
-      margin: 0 auto 17px;
-      max-width: 820px;
-    }
-    .hero p { font-size: clamp(15px, 2vw, 18px); margin: 0 auto; max-width: 720px; color: #edf7f0; }
-    .hero-link {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 11px 23px;
-      border-radius: 30px;
-      background: var(--gold);
-      color: #203326;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-    }
-    .hero-link:hover { background: var(--gold-light); }
-
-    main { padding: 42px 0 20px; }
-    section { margin-bottom: 28px; }
-    .panel {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: clamp(22px, 4vw, 34px);
-      box-shadow: var(--shadow);
-      border-top: 3px solid var(--gold);
-    }
-    .section-heading { margin-bottom: 18px; }
-    .section-heading .kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      font-size: 11px;
-      margin: 0 0 5px;
-    }
-    h2.section-title { color: var(--green-dark); font-size: clamp(23px, 3vw, 30px); margin: 0; line-height: 1.3; }
-    .section-intro { color: var(--muted); margin: 12px 0 0; max-width: 850px; }
-    .history p { margin: 12px 0; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat( auto-fit, minmax(230px, 1fr) );
-      gap: 18px;
-      margin-top: 24px;
-    }
-    .school-card {
-      background: #fff;
-      border: 1px solid #e5eee7;
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 7px 20px rgba(5,58,37,.05);
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .school-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .school-icon {
-      width: 43px; height: 43px;
-      display: grid; place-items: center;
-      border-radius: 12px;
-      color: var(--green-dark);
-      background: var(--green-soft);
-      font-size: 21px;
-      margin-bottom: 13px;
-    }
-    .school-card h3 { color: var(--green-dark); font-size: 17px; line-height: 1.35; margin: 0 0 7px; }
-    .tahun {
-      display: inline-block;
-      color: #765b17;
-      background: #fbf5e4;
-      border-radius: 20px;
-      padding: 3px 10px;
-      font-size: 12px;
-      font-weight: 700;
-      margin: 0 0 11px;
-    }
-    .school-card p:last-child { color: var(--muted); font-size: 14px; margin: 0; }
-
-    .program-grid, .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 15px;
-      margin-top: 22px;
-    }
-    .info-card {
-      background: var(--green-soft);
-      border-radius: 13px;
-      padding: 19px;
-      border: 1px solid #dcebe0;
-    }
-    .info-card h3 { margin: 0 0 7px; color: var(--green-dark); font-size: 16px; }
-    .info-card p { margin: 0; color: var(--muted); font-size: 14px; }
-
-    .gallery-note {
-      padding: 24px;
-      border: 1px dashed #b9cdbf;
-      border-radius: 13px;
-      text-align: center;
-      color: var(--muted);
-      background: #fbfdfb;
-      margin-top: 20px;
-    }
-    .gallery-note strong { color: var(--green-dark); }
-    .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 22px;
-}
-
-.gallery-card {
-  background: white;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid #e5eee7;
-}
-
-.gallery-card img {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  display: block;
-}
-
-.gallery-card p {
-  color: var(--green-dark);
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  margin: 0;
-}
-
-@media (max-width: 650px) {
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-}
-    .contact-item { background: #f8fbf8; border: 1px solid #e5eee7; border-radius: 12px; padding: 17px; }
-    .contact-item strong { display: block; color: var(--green-dark); margin-bottom: 4px; }
-    .contact-item span { color: var(--muted); font-size: 14px; }
-
-    footer {
-      background: linear-gradient(120deg, var(--green-deep), var(--green-dark));
-      color: white;
-      text-align: center;
-      padding: 28px 18px;
-      margin-top: 30px;
-      border-top: 4px solid var(--gold);
-      font-size: 14px;
-    }
-    footer p { margin: 4px 0; }
-    footer .small { color: #d6e7dc; font-size: 12px; }
-
-    @media (max-width: 650px) {
-      .container { width: min(100% - 28px, 1120px); }
-      header { padding: 11px 14px; gap: 11px; }
-      .logo { width: 58px; height: 58px; }
-      .brand p { font-size: 11px; }
-      nav { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
-      nav a { white-space: nowrap; padding: 12px 13px; font-size: 12px; }
-      .hero { padding: 62px 18px; }
-      .panel { padding: 21px 18px; }
-      .cards { grid-template-columns: 1fr; }
-    }
-
-    /* Penyegaran tampilan: hijau NU, emas hangat, dan ruang putih */
     :root {
       --green: #087a4b;
       --green-dark: #075638;
@@ -291,87 +19,51 @@
       --paper: #f3f7f3;
       --ink: #20372b;
       --muted: #68796e;
+      --white: #fff;
       --shadow: 0 16px 42px rgba(4,59,42,.10);
       --radius: 20px;
     }
-    body { background: linear-gradient(180deg,#f7faf7 0%,#eef5ef 100%); }
-    .topline { height: 6px; background: linear-gradient(90deg,#064b30 0%,#d3ad4b 48%,#0b8753 100%); }
-    header { padding-top: 17px; padding-bottom: 17px; }
-    .logo { width: 86px; height: 86px; padding: 5px; border-radius: 18px; background: #f2f8f3; box-shadow: 0 6px 18px rgba(5,75,48,.09); }
-    .brand h1 { letter-spacing: .8px; font-weight: 800; }
-    .brand p { letter-spacing: .25px; }
-    nav { background: rgba(5,86,56,.97); backdrop-filter: blur(12px); border-bottom: 2px solid rgba(211,173,75,.75); }
-    nav a { padding: 15px 19px; position: relative; }
-    nav a:after { content:''; position:absolute; left:19px; right:19px; bottom:7px; height:2px; background:var(--gold-light); transform:scaleX(0); transform-origin:left; transition:transform .22s ease; }
-    nav a:hover:after, nav a:focus:after { transform:scaleX(1); }
-    .hero { text-align:left; padding: clamp(78px,10vw,132px) 24px; background: radial-gradient(circle at 82% 18%,rgba(211,173,75,.24),transparent 24%), radial-gradient(circle at 8% 88%,rgba(255,255,255,.10),transparent 25%), linear-gradient(118deg,#033b2a 0%,#087a4b 62%,#15915c 100%); }
-    .hero-content { max-width: 1120px; }
-    .hero h2 { margin-left:0; font-weight:800; letter-spacing:-.7px; text-shadow:0 3px 20px rgba(0,0,0,.12); }
-    .hero p { margin-left:0; line-height:1.85; }
-    .eyebrow { background:rgba(255,255,255,.08); backdrop-filter:blur(5px); }
-    .hero-link { padding:13px 25px; border:1px solid rgba(255,255,255,.25); box-shadow:0 8px 22px rgba(0,0,0,.16); transition:transform .2s,background .2s; }
-    .hero-link:hover { transform:translateY(-3px); }
-    main { padding-top: 48px; }
-    .panel { border:1px solid #e5eee7; border-top:4px solid var(--gold); border-radius:22px; box-shadow:0 12px 36px rgba(5,58,37,.065); }
-    .section-heading { position:relative; padding-left:15px; }
-    .section-heading:before { content:''; position:absolute; left:0; top:4px; bottom:3px; width:4px; border-radius:8px; background:linear-gradient(var(--gold),#f0dfaa); }
-    .section-heading .kicker { color:#a17a20; letter-spacing:1.8px; }
-    h2.section-title { letter-spacing:-.35px; }
-    .school-card { position:relative; overflow:hidden; border:1px solid #e4eee6; border-radius:18px; background:linear-gradient(145deg,#fff 0%,#fbfdfb 100%); box-shadow:0 8px 24px rgba(5,58,37,.055); }
-    .school-card:before { content:''; position:absolute; width:95px; height:95px; right:-48px; top:-48px; border-radius:50%; background:rgba(211,173,75,.12); }
-    .school-card:hover { transform:translateY(-6px); box-shadow:0 18px 34px rgba(5,58,37,.12); border-color:#c9dfcf; }
-    .school-icon { width:50px; height:50px; border-radius:15px; background:linear-gradient(145deg,#e4f2e8,#f5f9f5); box-shadow:inset 0 0 0 1px #d7e9dc; }
-    .school-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 5px;
-  display: block;
-}
-    .tahun { background:#fbf4df; color:#806019; border:1px solid #f0e2b5; }
-    .info-card { background:linear-gradient(145deg,#f0f8f2,#e8f3eb); border:1px solid #dcebe0; border-radius:16px; transition:transform .2s,box-shadow .2s; }
-    .info-card:hover { transform:translateY(-4px); box-shadow:0 12px 24px rgba(5,58,37,.08); }
-    .gallery-card { border-radius:18px; transition:transform .22s,box-shadow .22s; }
-    .gallery-card:hover { transform:translateY(-5px); box-shadow:0 16px 30px rgba(5,58,37,.13); }
-    .gallery-card img { transition:transform .45s ease; }
-    .gallery-card:hover img { transform:scale(1.035); }
-    .contact-item { border-radius:15px; background:linear-gradient(145deg,#fbfdfb,#f1f7f2); }
-    footer { background:radial-gradient(circle at 85% 0%,rgba(211,173,75,.18),transparent 28%),linear-gradient(120deg,#033b2a,#075638); }
-    
-    
-    .back-top { position:fixed;right:20px;bottom:20px;z-index:30;width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#075638;color:#fff;text-decoration:none;font-size:20px;box-shadow:0 7px 20px rgba(4,59,42,.25);border:2px solid #d3ad4b; }
-    .back-top:hover { background:#0b8753; }
-    @media (max-width:650px) {
-      header { padding:11px 14px; }
-      .logo { width:62px;height:62px; }
-      .hero { text-align:center; }
-      .hero h2,.hero p { margin-left:auto; }
-      
-      .gallery-grid { grid-template-columns:1fr; }
-      .back-top { right:14px;bottom:14px; }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
     }
-    @media (prefers-reduced-motion: reduce) { *,*:before,*:after { scroll-behavior:auto !important; transition:none !important; } }
 
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg,#f7faf7 0%,#eef5ef 100%);
+      line-height: 1.7;
+    }
 
-    /* Penyempurnaan identitas visual: gradasi hijau NU dan ornamen geometri Islami */
+    a { color: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+
     .topline {
       height: 7px;
-      background: linear-gradient(90deg, #063b29 0%, #c9a33b 24%, #f2e2ad 50%, #c9a33b 76%, #063b29 100%);
+      background: linear-gradient(90deg,#063b29,#c9a33b 24%,#f2e2ad 50%,#c9a33b 76%,#063b29);
     }
+
     header {
       position: relative;
       isolation: isolate;
       overflow: hidden;
       min-height: 112px;
-      padding-top: 17px;
-      padding-bottom: 17px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 17px max(20px, calc((100% - 1120px) / 2));
       background:
-        radial-gradient(ellipse at 12% 10%, rgba(255,255,255,.13), transparent 34%),
-        radial-gradient(ellipse at 88% 100%, rgba(201,163,59,.19), transparent 32%),
-        linear-gradient(115deg, #043d29 0%, #087447 48%, #075333 100%);
-      border-bottom: 4px solid #c9a33b;
+        radial-gradient(ellipse at 12% 10%,rgba(255,255,255,.13),transparent 34%),
+        radial-gradient(ellipse at 88% 100%,rgba(201,163,59,.19),transparent 32%),
+        linear-gradient(115deg,#043d29,#087447 48%,#075333);
+      border-bottom: 4px solid var(--gold);
       box-shadow: 0 5px 18px rgba(3,45,29,.18);
     }
+
     header::before {
       content: "";
       position: absolute;
@@ -379,13 +71,14 @@
       inset: -50%;
       opacity: .16;
       background-image:
-        repeating-linear-gradient(45deg, transparent 0 28px, rgba(242,226,173,.55) 29px 30px, transparent 31px 58px),
-        repeating-linear-gradient(-45deg, transparent 0 28px, rgba(242,226,173,.42) 29px 30px, transparent 31px 58px);
+        repeating-linear-gradient(45deg,transparent 0 28px,rgba(242,226,173,.55) 29px 30px,transparent 31px 58px),
+        repeating-linear-gradient(-45deg,transparent 0 28px,rgba(242,226,173,.42) 29px 30px,transparent 31px 58px);
       transform: rotate(-7deg);
       pointer-events: none;
     }
+
     header::after {
-      content: "✧  ۞  ✧";
+      content: "✧ ۞ ✧";
       position: absolute;
       right: max(22px, calc((100% - 1120px) / 2));
       bottom: 4px;
@@ -394,6 +87,7 @@
       letter-spacing: 13px;
       pointer-events: none;
     }
+
     .logo {
       position: relative;
       z-index: 1;
@@ -401,76 +95,349 @@
       height: 82px;
       padding: 5px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #fffdf5, #f0dfad);
+      object-fit: contain;
+      flex: 0 0 auto;
+      background: linear-gradient(145deg,#fffdf5,#f0dfad);
       border: 2px solid #d8b957;
-      box-shadow: 0 0 0 4px rgba(255,255,255,.13), 0 5px 14px rgba(0,0,0,.24);
+      box-shadow: 0 0 0 4px rgba(255,255,255,.13),0 5px 14px rgba(0,0,0,.24);
     }
+
     .brand { position: relative; z-index: 1; }
+
     .brand h1 {
       color: #fffdf4;
-      text-shadow: 0 2px 5px rgba(0,0,0,.24);
+      font-size: clamp(17px,2.4vw,23px);
+      line-height: 1.25;
+      margin: 0 0 4px;
       letter-spacing: .8px;
+      font-weight: 800;
+      text-shadow: 0 2px 5px rgba(0,0,0,.24);
     }
+
     .brand p {
-      color: #f2e2ad;
+      margin: 0;
+      color: var(--gold-light);
       font-size: 13px;
       letter-spacing: .5px;
     }
-    @media (max-width: 650px) {
-      header { min-height: 96px; gap: 13px; padding-top: 13px; padding-bottom: 13px; }
-      .logo { width: 68px; height: 68px; }
-      .brand h1 { font-size: clamp(15px, 4vw, 20px); }
-      .brand p { font-size: 12px; }
-      header::after { right: 8px; font-size: 22px; letter-spacing: 5px; opacity: .7; }
+
+    nav {
+      background: rgba(5,86,56,.97);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      border-bottom: 2px solid rgba(211,173,75,.75);
+      backdrop-filter: blur(12px);
     }
 
-
-    .share-tools { display:flex; flex-wrap:wrap; gap:9px; justify-content:center; padding:18px 12px; }
-    .share-tools a, .share-tools button { border:1px solid rgba(242,226,173,.45); border-radius:999px; padding:8px 14px; background:rgba(255,255,255,.09); color:#fff; text-decoration:none; cursor:pointer; font:inherit; font-size:13px; }
-    .share-tools a:hover, .share-tools button:hover { background:rgba(255,255,255,.18); }
-
-    /* Komentar pengunjung - Firebase */
-    .comment-auth { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin:18px 0; }
-    .comment-btn {
-      border:0; border-radius:999px; padding:11px 18px; cursor:pointer;
-      font-weight:700; font-size:14px; background:linear-gradient(120deg,#075638,#0b8753);
-      color:#fff; box-shadow:0 6px 16px rgba(5,86,56,.16);
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 19px;
+      font-size: 14px;
+      font-weight: 600;
+      position: relative;
+      transition: background .2s ease;
     }
-    .comment-btn.secondary { background:#f3f7f3; color:#075638; border:1px solid #cbded0; box-shadow:none; }
-    .comment-status { color:var(--muted); font-size:13px; }
-    .comment-form { display:grid; gap:12px; margin:18px 0 24px; }
-    .comment-form textarea {
-      width:100%; min-height:110px; resize:vertical; padding:14px;
-      border:1px solid #d7e5da; border-radius:13px; font:inherit; color:var(--ink);
-      background:#fcfefc;
+
+    nav a:after {
+      content: "";
+      position: absolute;
+      left: 19px;
+      right: 19px;
+      bottom: 7px;
+      height: 2px;
+      background: var(--gold-light);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .22s ease;
     }
-    .comment-form textarea:focus { outline:2px solid #c9a33b; border-color:#0b8753; }
-    .comment-list { display:grid; gap:13px; margin-top:18px; }
-    .comment-card { padding:16px; border:1px solid #e1ece4; border-radius:15px; background:#fbfdfb; }
-    .comment-person { display:flex; align-items:center; gap:10px; }
-    .comment-avatar { width:38px; height:38px; border-radius:50%; object-fit:cover; background:#eaf4ee; }
-    .comment-person strong { color:#075638; display:block; line-height:1.3; }
-    .comment-date { color:#7a887e; font-size:11px; }
-    .comment-text { white-space:pre-wrap; overflow-wrap:anywhere; margin:12px 0 4px; }
-    .comment-delete { border:0; background:transparent; color:#a33b32; padding:5px 0; cursor:pointer; font-size:12px; }
-    .comment-empty { color:var(--muted); padding:15px; border:1px dashed #cbded0; border-radius:12px; text-align:center; }
-    @media(max-width:650px) { .comment-auth { align-items:stretch; } .comment-btn { width:100%; } }
 
+    nav a:hover, nav a:focus { background: var(--green-dark); }
+    nav a:hover:after, nav a:focus:after { transform: scaleX(1); }
 
+    /* HERO: tulisan kiri, lima logo lembaga di kanan */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      padding: 48px 24px;
+      background:
+        radial-gradient(circle at 82% 18%,rgba(211,173,75,.24),transparent 24%),
+        radial-gradient(circle at 8% 88%,rgba(255,255,255,.10),transparent 25%),
+        linear-gradient(118deg,#033b2a 0%,#087a4b 62%,#15915c 100%);
+      border-bottom: 5px solid var(--gold);
+    }
 
-    /* Tampilan baru lima lembaga di bagian depan beranda */
+    .hero:before, .hero:after {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(234,217,164,.2);
+      transform: rotate(45deg);
+      pointer-events: none;
+    }
+
+    .hero:before { left: -150px; top: -130px; }
+    .hero:after { right: -150px; bottom: -150px; }
+
+    .hero-layout {
+      position: relative;
+      z-index: 1;
+      width: min(1120px,100%);
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 145px;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .hero-content {
+      min-width: 0;
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold-light);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(234,217,164,.55);
+      border-radius: 30px;
+      padding: 5px 15px;
+      margin-bottom: 18px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      font-size: clamp(30px,4.5vw,48px);
+      line-height: 1.18;
+      margin: 0 0 17px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+      text-shadow: 0 3px 20px rgba(0,0,0,.12);
+    }
+
+    .hero p {
+      font-size: clamp(14px,1.8vw,18px);
+      margin: 0;
+      line-height: 1.85;
+      color: #edf7f0;
+      max-width: 720px;
+    }
+
+    .hero-link {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 25px;
+      border-radius: 30px;
+      background: var(--gold);
+      color: #203326;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,.25);
+      box-shadow: 0 8px 22px rgba(0,0,0,.16);
+      transition: transform .2s,background .2s;
+    }
+
+    .hero-link:hover {
+      background: var(--gold-light);
+      transform: translateY(-3px);
+    }
+
+    /* Kolom lima logo di sisi kanan */
+    .hero-schools {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 13px 10px;
+      border: 1px solid rgba(242,226,173,.35);
+      border-radius: 22px;
+      background: rgba(255,255,255,.09);
+      box-shadow: 0 10px 30px rgba(0,0,0,.12);
+      backdrop-filter: blur(7px);
+    }
+
+    .hero-school-logo {
+      width: 92px;
+      height: 92px;
+      display: grid;
+      place-items: center;
+      padding: 7px;
+      border-radius: 16px;
+      background: linear-gradient(145deg,#fff,#f8f5e9);
+      border: 2px solid rgba(211,173,75,.85);
+      box-shadow: 0 5px 14px rgba(0,0,0,.15);
+      transition: transform .2s ease;
+    }
+
+    .hero-school-logo:hover { transform: scale(1.06); }
+
+    .hero-school-logo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    main { padding: 48px 0 20px; }
+    section { margin-bottom: 28px; }
+
+    .panel {
+      background: white;
+      border: 1px solid #e5eee7;
+      border-top: 4px solid var(--gold);
+      border-radius: 22px;
+      padding: clamp(22px,4vw,34px);
+      box-shadow: 0 12px 36px rgba(5,58,37,.065);
+    }
+
+    .section-heading {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 18px;
+    }
+
+    .section-heading:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      bottom: 3px;
+      width: 4px;
+      border-radius: 8px;
+      background: linear-gradient(var(--gold),#f0dfaa);
+    }
+
+    .section-heading .kicker {
+      color: #a17a20;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-weight: 700;
+      font-size: 11px;
+      margin: 0 0 5px;
+    }
+
+    h2.section-title {
+      color: var(--green-dark);
+      font-size: clamp(23px,3vw,30px);
+      margin: 0;
+      line-height: 1.3;
+      letter-spacing: -.35px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin: 12px 0 0;
+      max-width: 850px;
+    }
+
+    .history p { margin: 12px 0; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .school-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg,#fff,#fbfdfb);
+      border: 1px solid #e4eee6;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 24px rgba(5,58,37,.055);
+      transition: transform .2s ease,box-shadow .2s ease;
+    }
+
+    .school-card:before {
+      content: "";
+      position: absolute;
+      width: 95px;
+      height: 95px;
+      right: -48px;
+      top: -48px;
+      border-radius: 50%;
+      background: rgba(211,173,75,.12);
+    }
+
+    .school-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(5,58,37,.12);
+      border-color: #c9dfcf;
+    }
+
+    .school-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: linear-gradient(145deg,#e4f2e8,#f5f9f5);
+      box-shadow: inset 0 0 0 1px #d7e9dc;
+      margin-bottom: 13px;
+    }
+
+    .school-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 5px;
+      display: block;
+    }
+
+    .school-card h3 {
+      color: var(--green-dark);
+      font-size: 17px;
+      line-height: 1.35;
+      margin: 0 0 7px;
+    }
+
+    .tahun {
+      display: inline-block;
+      color: #806019;
+      background: #fbf4df;
+      border: 1px solid #f0e2b5;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0 0 11px;
+    }
+
+    .school-card p:last-child {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Lima kartu lembaga pada halaman utama */
     #lembaga {
       margin-top: 0;
-      background: linear-gradient(145deg, #ffffff 0%, #f7fbf7 100%);
+      background: linear-gradient(145deg,#fff,#f7fbf7);
     }
+
     #lembaga .section-heading { margin-bottom: 8px; }
+
     #lembaga .cards {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(5,minmax(0,1fr));
       gap: 16px;
       margin-top: 26px;
       align-items: stretch;
     }
+
     #lembaga .school-card {
       display: flex;
       flex-direction: column;
@@ -484,39 +451,34 @@
       border: 1px solid #e5eadb;
       border-top: 4px solid #c9a33b;
       border-radius: 18px;
-      background: #fff;
+      background: white;
       box-shadow: 0 8px 22px rgba(5,58,37,.07);
-      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
-    #lembaga .school-card:hover {
-      transform: translateY(-6px);
-      border-color: #d3ad4b;
-      box-shadow: 0 16px 30px rgba(5,58,37,.13);
-    }
+
     #lembaga .school-card:focus-visible {
       outline: 3px solid #d3ad4b;
       outline-offset: 4px;
     }
+
     #lembaga .school-icon {
       width: 132px;
       height: 132px;
       flex: 0 0 132px;
-      display: grid;
-      place-items: center;
       margin: 0 auto 17px;
       padding: 10px;
       border: 1px solid #e7d7a5;
       border-radius: 20px;
-      background: linear-gradient(145deg, #fff 0%, #f8f7ef 100%);
+      background: linear-gradient(145deg,#fff,#f8f7ef);
       box-shadow: 0 5px 15px rgba(5,58,37,.07);
     }
+
     #lembaga .school-icon img {
-      display: block;
       width: 100%;
       height: 100%;
       object-fit: contain;
       padding: 0;
     }
+
     #lembaga .school-card h3 {
       min-height: 46px;
       display: flex;
@@ -526,7 +488,9 @@
       font-size: 15px;
       line-height: 1.4;
     }
+
     #lembaga .tahun { margin: 0 0 10px; }
+
     #lembaga .school-status {
       display: inline-block;
       margin: 0 0 12px;
@@ -539,34 +503,403 @@
       line-height: 1.35;
       font-weight: 700;
     }
+
     #lembaga .school-card > p:last-child {
       margin: auto 0 0;
       color: #68796e;
       font-size: 12px;
       line-height: 1.6;
     }
+
+    .program-grid,.contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+      gap: 15px;
+      margin-top: 22px;
+    }
+
+    .info-card {
+      background: linear-gradient(145deg,#f0f8f2,#e8f3eb);
+      border: 1px solid #dcebe0;
+      border-radius: 16px;
+      padding: 19px;
+      transition: transform .2s,box-shadow .2s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(5,58,37,.08);
+    }
+
+    .info-card h3 {
+      margin: 0 0 7px;
+      color: var(--green-dark);
+      font-size: 16px;
+    }
+
+    .info-card p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    /* Galeri */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .gallery-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid #e5eee7;
+      transition: transform .22s,box-shadow .22s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px rgba(5,58,37,.13);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      transition: transform .45s ease;
+    }
+
+    .gallery-card:hover img { transform: scale(1.035); }
+
+    .gallery-card p {
+      color: var(--green-dark);
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      margin: 0;
+    }
+
+    /* Kontak */
+    .contact-item {
+      background: linear-gradient(145deg,#fbfdfb,#f1f7f2);
+      border: 1px solid #e5eee7;
+      border-radius: 15px;
+      padding: 17px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--green-dark);
+      margin-bottom: 4px;
+    }
+
+    .contact-item span { color: var(--muted); font-size: 14px; }
+
+    /* Komentar Firebase */
+    .comment-auth {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .comment-btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 11px 18px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+      background: linear-gradient(120deg,#075638,#0b8753);
+      color: white;
+      box-shadow: 0 6px 16px rgba(5,86,56,.16);
+    }
+
+    .comment-btn.secondary {
+      background: #f3f7f3;
+      color: #075638;
+      border: 1px solid #cbded0;
+      box-shadow: none;
+    }
+
+    .comment-status { color: var(--muted); font-size: 13px; }
+
+    .comment-form {
+      display: grid;
+      gap: 12px;
+      margin: 18px 0 24px;
+    }
+
+    .comment-form textarea {
+      width: 100%;
+      min-height: 110px;
+      resize: vertical;
+      padding: 14px;
+      border: 1px solid #d7e5da;
+      border-radius: 13px;
+      font: inherit;
+      color: var(--ink);
+      background: #fcfefc;
+    }
+
+    .comment-form textarea:focus {
+      outline: 2px solid #c9a33b;
+      border-color: #0b8753;
+    }
+
+    .comment-list { display: grid; gap: 13px; margin-top: 18px; }
+
+    .comment-card {
+      padding: 16px;
+      border: 1px solid #e1ece4;
+      border-radius: 15px;
+      background: #fbfdfb;
+    }
+
+    .comment-person { display: flex; align-items: center; gap: 10px; }
+
+    .comment-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #eaf4ee;
+    }
+
+    .comment-person strong {
+      color: #075638;
+      display: block;
+      line-height: 1.3;
+    }
+
+    .comment-date { color: #7a887e; font-size: 11px; }
+
+    .comment-text {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 12px 0 4px;
+    }
+
+    .comment-delete {
+      border: 0;
+      background: transparent;
+      color: #a33b32;
+      padding: 5px 0;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .comment-empty {
+      color: var(--muted);
+      padding: 15px;
+      border: 1px dashed #cbded0;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    /* Footer dan tombol berbagi */
+    footer {
+      background:
+        radial-gradient(circle at 85% 0%,rgba(211,173,75,.18),transparent 28%),
+        linear-gradient(120deg,#033b2a,#075638);
+      color: white;
+      text-align: center;
+      padding: 28px 18px;
+      margin-top: 30px;
+      border-top: 4px solid var(--gold);
+      font-size: 14px;
+    }
+
+    footer p { margin: 4px 0; }
+    footer .small { color: #d6e7dc; font-size: 12px; }
+
+    .share-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      justify-content: center;
+      padding: 18px 12px;
+    }
+
+    .share-tools a,.share-tools button {
+      border: 1px solid rgba(242,226,173,.45);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: rgba(255,255,255,.09);
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .share-tools a:hover,.share-tools button:hover {
+      background: rgba(255,255,255,.18);
+    }
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 30;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #075638;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      box-shadow: 0 7px 20px rgba(4,59,42,.25);
+      border: 2px solid #d3ad4b;
+    }
+
+    .back-top:hover { background: #0b8753; }
+
+    /* Tampilan tablet */
     @media (max-width: 1050px) {
-      #lembaga .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      #lembaga .cards { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .hero-layout { gap: 22px; grid-template-columns: minmax(0,1fr) 125px; }
+      .hero-school-logo { width: 82px; height: 82px; }
     }
+
+    /* Tampilan HP */
     @media (max-width: 650px) {
-      #lembaga .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .container { width: min(100% - 28px,1120px); }
+
+      header {
+        min-height: 96px;
+        gap: 13px;
+        padding: 13px 14px;
+      }
+
+      .logo { width: 68px; height: 68px; }
+
+      .brand h1 { font-size: clamp(15px,4vw,20px); }
+      .brand p { font-size: 12px; }
+
+      header::after {
+        right: 8px;
+        font-size: 22px;
+        letter-spacing: 5px;
+        opacity: .7;
+      }
+
+      nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+      }
+
+      nav a {
+        white-space: nowrap;
+        padding: 12px 13px;
+        font-size: 12px;
+      }
+
+      .hero { padding: 35px 14px; }
+
+      .hero-layout {
+        grid-template-columns: minmax(0,1fr) 67px;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .hero-content { text-align: left; }
+
+      .eyebrow {
+        font-size: 8px;
+        letter-spacing: .5px;
+        padding: 4px 7px;
+        margin-bottom: 12px;
+      }
+
+      .hero h2 {
+        font-size: clamp(18px,5vw,25px);
+        line-height: 1.25;
+        margin: 0 0 12px;
+      }
+
+      .hero p {
+        font-size: 11px;
+        line-height: 1.6;
+      }
+
+      .hero-link {
+        font-size: 10px;
+        padding: 9px 11px;
+        margin-top: 15px;
+      }
+
+      .hero-schools {
+        gap: 7px;
+        padding: 8px 5px;
+        border-radius: 14px;
+      }
+
+      .hero-school-logo {
+        width: 52px;
+        height: 52px;
+        padding: 4px;
+        border-radius: 10px;
+      }
+
+      main { padding-top: 30px; }
+      .panel { padding: 21px 18px; }
+
+      #lembaga .cards {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 12px;
+      }
+
       #lembaga .school-card { padding: 17px 11px; }
-      #lembaga .school-icon { width: 112px; height: 112px; flex-basis: 112px; padding: 8px; }
-      #lembaga .school-card h3 { min-height: 52px; font-size: 14px; }
+
+      #lembaga .school-icon {
+        width: 112px;
+        height: 112px;
+        flex-basis: 112px;
+        padding: 8px;
+      }
+
+      #lembaga .school-card h3 {
+        min-height: 52px;
+        font-size: 14px;
+      }
+
       #lembaga .school-card > p:last-child { font-size: 11px; }
+
+      .gallery-grid { grid-template-columns: 1fr; }
+
+      .comment-auth { align-items: stretch; }
+      .comment-btn { width: 100%; }
+
+      .back-top { right: 14px; bottom: 14px; }
     }
+
     @media (max-width: 370px) {
+      .hero-layout { grid-template-columns: minmax(0,1fr) 58px; gap: 7px; }
+      .hero-school-logo { width: 45px; height: 45px; }
+      .hero-schools { padding: 6px 4px; gap: 6px; }
+      .hero h2 { font-size: 18px; }
       #lembaga .cards { grid-template-columns: 1fr; }
       #lembaga .school-icon { width: 125px; height: 125px; flex-basis: 125px; }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      *,*:before,*:after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="topline"></div>
 
   <header>
-    <!-- Pastikan file logo berada satu folder dengan file index.html -->
     <img src="Yayasan%20Darul%20Fikr%20Singkut%20Crest.png"
          alt="Logo Yayasan Darul Fikr Singkut" class="logo">
     <div class="brand">
@@ -584,398 +917,647 @@
     <a href="#kontak">Kontak</a>
   </nav>
 
+  <!-- HALAMAN UTAMA -->
   <div class="hero" id="beranda">
-    <div class="hero-content">
-      <span class="eyebrow">Pendidikan • Keislaman • Kemandirian</span>
-      <h2>Membangun Generasi Berilmu, Beriman, dan Berakhlakul Karimah</h2>
-      <p>Yayasan Darul Fikr Singkut Berkomitmen Menghadirkan Pendidikan Islam yang Berkualitas, Mandiri, dan Berakhlakul Karimah.</p>
-      <a class="hero-link" href="#lembaga">Jelajahi Lembaga Pendidikan</a>
+    <div class="hero-layout">
+
+      <div class="hero-content">
+        <span class="eyebrow">Pendidikan • Keislaman • Kemandirian</span>
+
+        <h2>Membangun Generasi Berilmu, Beriman, dan Berakhlakul Karimah</h2>
+
+        <p>
+          Yayasan Darul Fikr Singkut Berkomitmen Menghadirkan Pendidikan
+          Islam yang Berkualitas, Mandiri, dan Berakhlakul Karimah.
+        </p>
+
+        <a class="hero-link" href="#lembaga">
+          Jelajahi Lembaga Pendidikan
+        </a>
+      </div>
+
+      <!-- LIMA LOGO LEMBAGA DI SEBELAH KANAN -->
+      <div class="hero-schools" aria-label="Logo lima lembaga pendidikan">
+
+        <div class="hero-school-logo">
+          <img src="icon-mts.png.png" alt="Logo MTs Al-Fikr">
+        </div>
+
+        <div class="hero-school-logo">
+          <img src="icon-ra.png.png" alt="Logo RA Darul Fikr">
+        </div>
+
+        <div class="hero-school-logo">
+          <img src="icon-rtq.png.png" alt="Logo RTQ Darul Fikr">
+        </div>
+
+        <div class="hero-school-logo">
+          <img src="icon-ma.png.png" alt="Logo MA Darul Fikr">
+        </div>
+
+        <div class="hero-school-logo">
+          <img src="icon-ponpes.png.png" alt="Logo Pondok Pesantren Darul Fikr">
+        </div>
+
+      </div>
     </div>
   </div>
 
-    <main class="container">
+  <main class="container">
+
+    <!-- LEMBAGA PENDIDIKAN -->
     <section id="lembaga" class="panel">
       <div class="section-heading">
         <p class="kicker">Unit Pendidikan</p>
         <h2 class="section-title">Lembaga Pendidikan</h2>
-        <p class="section-intro">Yayasan Darul Fikr Singkut menaungi lima lembaga pendidikan yang berkomitmen memberikan pelayanan pendidikan dan membangun generasi berilmu, beriman, serta berakhlakul karimah.</p>
+        <p class="section-intro">
+          Yayasan Darul Fikr Singkut menaungi lima lembaga pendidikan
+          yang berkomitmen memberikan pelayanan pendidikan dan membangun
+          generasi berilmu, beriman, serta berakhlakul karimah.
+        </p>
       </div>
+
       <div class="cards">
-        <a class="school-card school-link" href="https://website-mts-al-fikr.pages.dev" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi website MTs Al-Fikr Cianjur Singkut">
+
+        <a class="school-card school-link"
+           href="https://website-mts-al-fikr.pages.dev"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Kunjungi website MTs Al-Fikr Cianjur Singkut">
+
           <div class="school-icon">
             <img src="icon-mts.png.png" alt="Logo MTs Al-Fikr">
           </div>
+
           <h3>MTs Al-Fikr Cianjur Singkut</h3>
           <p class="tahun">Berdiri Tahun 2011</p>
           <span class="school-status">Kunjungi Website MTs ↗</span>
-          <p>Madrasah Tsanawiyah yang menyelenggarakan pendidikan jenjang menengah pertama dengan perpaduan ilmu pengetahuan umum dan keagamaan.</p>
+          <p>
+            Madrasah Tsanawiyah yang menyelenggarakan pendidikan
+            jenjang menengah pertama dengan perpaduan ilmu pengetahuan
+            umum dan keagamaan.
+          </p>
         </a>
+
         <article class="school-card">
           <div class="school-icon">
-  <img src="icon-ra.png.png" alt="Ikon RA Darul Fikr">
-</div>
+            <img src="icon-ra.png.png" alt="Logo RA Darul Fikr">
+          </div>
           <h3>RA Darul Fikr</h3>
           <p class="tahun">Berdiri Tahun 2018</p>
           <span class="school-status">Website Segera Hadir</span>
-          <p>Raudhatul Athfal Darul Fikr merupakan lembaga pendidikan anak usia dini berciri khas Islam yang menanamkan dasar keimanan, akhlak, dan kemandirian.</p>
+          <p>
+            Raudhatul Athfal Darul Fikr merupakan lembaga pendidikan
+            anak usia dini berciri khas Islam yang menanamkan dasar
+            keimanan, akhlak, dan kemandirian.
+          </p>
         </article>
+
         <article class="school-card">
           <div class="school-icon">
-  <img src="icon-rtq.png.png" alt="Ikon RTQ">
-</div>
+            <img src="icon-rtq.png.png" alt="Logo RTQ">
+          </div>
           <h3>Raudhatut Tarbiyatil Quran (RTQ)</h3>
           <p class="tahun">Berdiri Tahun 2019</p>
           <span class="school-status">Website Segera Hadir</span>
-          <p>Lembaga pendidikan Al-Qur'an yang membimbing generasi muda agar mampu membaca, memahami, dan mencintai Al-Qur'an.</p>
+          <p>
+            Lembaga pendidikan Al-Qur'an yang membimbing generasi
+            muda agar mampu membaca, memahami, dan mencintai Al-Qur'an.
+          </p>
         </article>
+
         <article class="school-card">
           <div class="school-icon">
-  <img src="icon-ma.png.png" alt="Ikon MA Darul Fikr">
-</div>
+            <img src="icon-ma.png.png" alt="Logo MA Darul Fikr">
+          </div>
           <h3>MA Darul Fikr</h3>
           <p class="tahun">Berdiri Tahun 2023</p>
           <span class="school-status">Website Segera Hadir</span>
-          <p>Madrasah Aliyah yang menyelenggarakan pendidikan jenjang menengah atas dengan penguatan ilmu pengetahuan dan nilai-nilai Islam.</p>
+          <p>
+            Madrasah Aliyah yang menyelenggarakan pendidikan
+            jenjang menengah atas dengan penguatan ilmu pengetahuan
+            dan nilai-nilai Islam.
+          </p>
         </article>
+
         <article class="school-card">
           <div class="school-icon">
-  <img src="icon-ponpes.png.png" alt="Ikon Pondok Pesantren Darul Fikr">
-</div>
+            <img src="icon-ponpes.png.png" alt="Logo Pondok Pesantren Darul Fikr">
+          </div>
           <h3>Pondok Pesantren Darul Fikr</h3>
           <p class="tahun">Berdiri Tahun 2024</p>
           <span class="school-status">Website Segera Hadir</span>
-          <p>Lembaga pendidikan Islam berbasis pesantren yang berfokus pada pembinaan ilmu agama, ibadah, kedisiplinan, dan akhlakul karimah santri.</p>
+          <p>
+            Lembaga pendidikan Islam berbasis pesantren yang berfokus
+            pada pembinaan ilmu agama, ibadah, kedisiplinan,
+            dan akhlakul karimah santri.
+          </p>
         </article>
+
       </div>
     </section>
 
-
+    <!-- GALERI -->
     <section id="galeri" class="panel">
-  <div class="section-heading">
-    <p class="kicker">Dokumentasi Yayasan</p>
-    <h2 class="section-title">Kegiatan Yayasan Darul Fikr Singkut</h2>
-    <p class="section-intro">
-      Dokumentasi kegiatan pendidikan, pembinaan santri,
-      dan aktivitas keagamaan Yayasan Darul Fikr Singkut.
-    </p>
-  </div>
+      <div class="section-heading">
+        <p class="kicker">Dokumentasi Yayasan</p>
+        <h2 class="section-title">Kegiatan Yayasan Darul Fikr Singkut</h2>
+        <p class="section-intro">
+          Dokumentasi kegiatan pendidikan, pembinaan santri,
+          dan aktivitas keagamaan Yayasan Darul Fikr Singkut.
+        </p>
+      </div>
 
-  <div class="gallery-grid">
-    <div class="gallery-card">
-      <img src="hsn.jpg" alt="Kegiatan Yayasan Darul Fikr">
-      <p>Kegiatan Hari Santri</p>
-    </div>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <img src="hsn.jpg" alt="Kegiatan Yayasan Darul Fikr">
+          <p>Kegiatan Hari Santri</p>
+        </div>
 
-    <div class="gallery-card">
-      <img src="kegiatan%201.jpg" alt="Kegiatan pendidikan">
-      <p>Kegiatan Pendidikan</p>
-    </div>
+        <div class="gallery-card">
+          <img src="kegiatan%201.jpg" alt="Kegiatan pendidikan">
+          <p>Kegiatan Pendidikan</p>
+        </div>
 
-    <div class="gallery-card">
-      <img src="kegiatan%20khataman.jpg" alt="Kegiatan Akhirussanah">
-      <p>Kegiatan Akhirussanah</p>
-    </div>
-  </div>
-</section>
+        <div class="gallery-card">
+          <img src="kegiatan%20khataman.jpg" alt="Kegiatan Akhirussanah">
+          <p>Kegiatan Akhirussanah</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL -->
     <section id="profil" class="panel history">
       <div class="section-heading">
         <p class="kicker">Mengenal Kami</p>
         <h2 class="section-title">Profil Yayasan</h2>
       </div>
+
       <h3>Sejarah Singkat</h3>
-      <p>Yayasan Darul Fikr Singkut didirikan pada tahun 2016 atas dasar dukungan dan aspirasi masyarakat yang mengharapkan hadirnya lembaga pendidikan Islam yang lebih dekat, mudah dijangkau, serta terjangkau dari segi biaya.</p>
-      <p>Keberadaan yayasan ini diharapkan dapat memberikan kesempatan yang lebih luas kepada masyarakat, khususnya anak-anak dan generasi muda di lingkungan Singkut dan sekitarnya, untuk memperoleh pendidikan yang layak tanpa terkendala jarak maupun kemampuan ekonomi.</p>
-      <p>Dengan semangat kebersamaan dan kepedulian terhadap pendidikan, Yayasan Darul Fikr Singkut berkomitmen untuk ikut berperan dalam mencerdaskan generasi bangsa, membangun karakter Islami, serta menanamkan nilai-nilai keagamaan dan akhlakul karimah.</p>
+
+      <p>
+        Yayasan Darul Fikr Singkut didirikan pada tahun 2016 atas dasar
+        dukungan dan aspirasi masyarakat yang mengharapkan hadirnya
+        lembaga pendidikan Islam yang lebih dekat, mudah dijangkau,
+        serta terjangkau dari segi biaya.
+      </p>
+
+      <p>
+        Keberadaan yayasan ini diharapkan dapat memberikan kesempatan
+        yang lebih luas kepada masyarakat, khususnya anak-anak dan
+        generasi muda di lingkungan Singkut dan sekitarnya, untuk
+        memperoleh pendidikan yang layak tanpa terkendala jarak
+        maupun kemampuan ekonomi.
+      </p>
+
+      <p>
+        Dengan semangat kebersamaan dan kepedulian terhadap pendidikan,
+        Yayasan Darul Fikr Singkut berkomitmen untuk ikut berperan
+        dalam mencerdaskan generasi bangsa, membangun karakter Islami,
+        serta menanamkan nilai-nilai keagamaan dan akhlakul karimah.
+      </p>
     </section>
 
+    <!-- PROGRAM -->
     <section id="program" class="panel">
       <div class="section-heading">
         <p class="kicker">Aktivitas Yayasan</p>
         <h2 class="section-title">Program dan Kegiatan</h2>
-        <p class="section-intro">Kegiatan pendidikan dan pembinaan dilaksanakan melalui unit-unit pendidikan sesuai jenjang dan kebutuhan peserta didik.</p>
+        <p class="section-intro">
+          Kegiatan pendidikan dan pembinaan dilaksanakan melalui
+          unit-unit pendidikan sesuai jenjang dan kebutuhan peserta didik.
+        </p>
       </div>
+
       <div class="program-grid">
         <div class="info-card">
           <h3>Pembelajaran Formal</h3>
-          <p>Kegiatan belajar mengajar yang mengembangkan pengetahuan, keterampilan, dan karakter peserta didik.</p>
+          <p>
+            Kegiatan belajar mengajar yang mengembangkan pengetahuan,
+            keterampilan, dan karakter peserta didik.
+          </p>
         </div>
+
         <div class="info-card">
           <h3>Pendidikan Al-Qur'an</h3>
-          <p>Pembiasaan membaca dan mencintai Al-Qur'an serta penguatan dasar-dasar keislaman.</p>
+          <p>
+            Pembiasaan membaca dan mencintai Al-Qur'an serta
+            penguatan dasar-dasar keislaman.
+          </p>
         </div>
+
         <div class="info-card">
           <h3>Pembinaan Akhlak dan Ibadah</h3>
-          <p>Pembiasaan ibadah, kedisiplinan, sopan santun, dan perilaku terpuji dalam kehidupan sehari-hari.</p>
+          <p>
+            Pembiasaan ibadah, kedisiplinan, sopan santun,
+            dan perilaku terpuji dalam kehidupan sehari-hari.
+          </p>
         </div>
+
         <div class="info-card">
           <h3>Kegiatan Keagamaan</h3>
-          <p>Kegiatan keislaman dan pembinaan kebersamaan di lingkungan lembaga pendidikan dan masyarakat.</p>
+          <p>
+            Kegiatan keislaman dan pembinaan kebersamaan di lingkungan
+            lembaga pendidikan dan masyarakat.
+          </p>
         </div>
       </div>
     </section>
 
-    
-
-
+    <!-- KOMENTAR -->
     <section id="komentar" class="panel">
       <div class="section-heading">
         <p class="kicker">Suara Masyarakat</p>
         <h2 class="section-title">Komentar dan Saran</h2>
-        <p class="section-intro">Silakan login menggunakan akun Google untuk menyampaikan komentar, saran, atau pertanyaan kepada Yayasan Darul Fikr Singkut. Gunakan bahasa yang santun dan sesuai etika.</p>
+        <p class="section-intro">
+          Silakan login menggunakan akun Google untuk menyampaikan
+          komentar, saran, atau pertanyaan kepada Yayasan Darul Fikr
+          Singkut. Gunakan bahasa yang santun dan sesuai etika.
+        </p>
       </div>
 
       <div class="comment-auth">
-        <button type="button" id="googleLoginBtn" class="comment-btn">Masuk dengan Google</button>
-        <button type="button" id="googleLogoutBtn" class="comment-btn secondary" hidden>Keluar</button>
-        <span id="commentUserStatus" class="comment-status">Anda belum login. Komentar dapat dibaca oleh semua pengunjung.</span>
+        <button type="button" id="googleLoginBtn" class="comment-btn">
+          Masuk dengan Google
+        </button>
+
+        <button type="button" id="googleLogoutBtn"
+                class="comment-btn secondary" hidden>
+          Keluar
+        </button>
+
+        <span id="commentUserStatus" class="comment-status">
+          Anda belum login. Komentar dapat dibaca oleh semua pengunjung.
+        </span>
       </div>
 
       <form id="commentForm" class="comment-form" hidden>
         <label for="commentText"><strong>Tulis komentar Anda</strong></label>
-        <textarea id="commentText" maxlength="1000" placeholder="Tuliskan komentar atau saran dengan bahasa yang santun..." required></textarea>
-        <div><button type="submit" id="sendCommentBtn" class="comment-btn">Kirim komentar</button></div>
-        <span class="comment-status">Maksimal 1.000 karakter. Nama dan foto profil Google akan ditampilkan bersama komentar.</span>
+
+        <textarea id="commentText" maxlength="1000"
+          placeholder="Tuliskan komentar atau saran dengan bahasa yang santun..."
+          required></textarea>
+
+        <div>
+          <button type="submit" id="sendCommentBtn" class="comment-btn">
+            Kirim komentar
+          </button>
+        </div>
+
+        <span class="comment-status">
+          Maksimal 1.000 karakter. Nama dan foto profil Google
+          akan ditampilkan bersama komentar.
+        </span>
       </form>
 
-      <div id="commentMessage" class="comment-status" role="status" aria-live="polite"></div>
+      <div id="commentMessage" class="comment-status"
+           role="status" aria-live="polite"></div>
+
       <div id="commentList" class="comment-list">
         <div class="comment-empty">Memuat komentar...</div>
       </div>
     </section>
 
+    <!-- KONTAK -->
     <section id="kontak" class="panel">
       <div class="section-heading">
         <p class="kicker">Hubungi Kami</p>
         <h2 class="section-title">Kontak Yayasan</h2>
-        <p class="section-intro">Untuk informasi lebih lanjut mengenai yayasan dan unit pendidikan, silakan menghubungi pengelola.</p>
+        <p class="section-intro">
+          Untuk informasi lebih lanjut mengenai yayasan dan unit
+          pendidikan, silakan menghubungi pengelola.
+        </p>
       </div>
+
       <div class="contact-grid">
         <div class="contact-item">
           <strong>Nama Yayasan</strong>
           <span>Yayasan Darul Fikr Singkut</span>
         </div>
+
         <div class="contact-item">
           <strong>Alamat</strong>
           <span>Jl. Pinang RW 07 Cianjur Singkut</span>
         </div>
+
         <div class="contact-item">
           <strong>Telepon/WhatsApp</strong>
           <span>+62813-6644-5510</span>
         </div>
+
         <div class="contact-item">
           <strong>Email</strong>
           <span>darulfikr.singkut@gmail.com</span>
         </div>
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p><strong>YAYASAN DARUL FIKR SINGKUT</strong></p>
     <p>Jl. Pinang RW 07 Cianjur Singkut</p>
-    <p class="small">© 2026 Yayasan Darul Fikr Singkut. Seluruh Hak Cipta Dilindungi.</p>
+    <p class="small">
+      © 2026 Yayasan Darul Fikr Singkut. Seluruh Hak Cipta Dilindungi.
+    </p>
 
     <div class="share-tools" aria-label="Bagikan website">
-      <a id="shareWhatsApp" href="https://wa.me/?text=https%3A%2F%2Fwebsite-darul-fikr-singkut.pages.dev%2F" target="_blank" rel="noopener">Bagikan WhatsApp</a>
-      <a id="shareFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwebsite-darul-fikr-singkut.pages.dev%2F" target="_blank" rel="noopener">Bagikan Facebook</a>
-      <button type="button" id="copySiteLink">Salin tautan website</button>
-      <span id="shareMessage" class="comment-status" style="color:#f2e2ad"></span>
+      <a id="shareWhatsApp"
+         href="https://wa.me/?text=https%3A%2F%2Fwebsite-darul-fikr-singkut.pages.dev%2F"
+         target="_blank" rel="noopener">
+        Bagikan WhatsApp
+      </a>
+
+      <a id="shareFacebook"
+         href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwebsite-darul-fikr-singkut.pages.dev%2F"
+         target="_blank" rel="noopener">
+        Bagikan Facebook
+      </a>
+
+      <button type="button" id="copySiteLink">
+        Salin tautan website
+      </button>
+
+      <span id="shareMessage" class="comment-status"
+            style="color:#f2e2ad"></span>
     </div>
-
   </footer>
-<a class="back-top" href="#beranda" aria-label="Kembali ke atas">↑</a>
 
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-  import {
-    getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-  import {
-    getFirestore, collection, addDoc, query, orderBy, onSnapshot,
-    serverTimestamp, deleteDoc, doc
-  } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+  <a class="back-top" href="#beranda" aria-label="Kembali ke atas">↑</a>
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDxlr-8sjo5UFSZpWNI8YhVknftfsY6rLo",
-    authDomain: "website-darul-fikr-singkut.firebaseapp.com",
-    projectId: "website-darul-fikr-singkut",
-    storageBucket: "website-darul-fikr-singkut.firebasestorage.app",
-    messagingSenderId: "169724568491",
-    appId: "1:169724568491:web:fc8aa5e7467d5a6f2b68ee"
-  };
+  <!-- FIREBASE: LOGIN GOOGLE DAN KOMENTAR -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-  const provider = new GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: "select_account" });
+    import {
+      getAuth, GoogleAuthProvider, signInWithPopup,
+      signOut, onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
-  const loginBtn = document.getElementById("googleLoginBtn");
-  const logoutBtn = document.getElementById("googleLogoutBtn");
-  const userStatus = document.getElementById("commentUserStatus");
-  const commentForm = document.getElementById("commentForm");
-  const commentText = document.getElementById("commentText");
-  const sendBtn = document.getElementById("sendCommentBtn");
-  const commentMessage = document.getElementById("commentMessage");
-  const commentList = document.getElementById("commentList");
+    import {
+      getFirestore, collection, addDoc, query, orderBy,
+      onSnapshot, serverTimestamp, deleteDoc, doc
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
-  let currentUser = null;
-  let commentsUnsubscribe = null;
+    const firebaseConfig = {
+      apiKey: "AIzaSyDxlr-8sjo5UFSZpWNI8YhVknftfsY6rLo",
+      authDomain: "website-darul-fikr-singkut.firebaseapp.com",
+      projectId: "website-darul-fikr-singkut",
+      storageBucket: "website-darul-fikr-singkut.firebasestorage.app",
+      messagingSenderId: "169724568491",
+      appId: "1:169724568491:web:fc8aa5e7467d5a6f2b68ee"
+    };
 
-  function showMessage(message, isError = false) {
-    commentMessage.textContent = message;
-    commentMessage.style.color = isError ? "#a33b32" : "#68796e";
-  }
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
 
-  function formatDate(timestamp) {
-    if (!timestamp || typeof timestamp.toDate !== "function") return "Baru saja";
-    return new Intl.DateTimeFormat("id-ID", {
-      dateStyle: "medium", timeStyle: "short"
-    }).format(timestamp.toDate());
-  }
+    provider.setCustomParameters({ prompt: "select_account" });
 
-  function safeText(tag, value, className) {
-    const element = document.createElement(tag);
-    if (className) element.className = className;
-    element.textContent = value || "";
-    return element;
-  }
+    const loginBtn = document.getElementById("googleLoginBtn");
+    const logoutBtn = document.getElementById("googleLogoutBtn");
+    const userStatus = document.getElementById("commentUserStatus");
+    const commentForm = document.getElementById("commentForm");
+    const commentText = document.getElementById("commentText");
+    const sendBtn = document.getElementById("sendCommentBtn");
+    const commentMessage = document.getElementById("commentMessage");
+    const commentList = document.getElementById("commentList");
 
-  function renderComments(snapshot) {
-    commentList.replaceChildren();
-    if (snapshot.empty) {
-      commentList.append(safeText("div", "Belum ada komentar. Jadilah yang pertama memberikan komentar.", "comment-empty"));
-      return;
+    let currentUser = null;
+    let commentsUnsubscribe = null;
+
+    function showMessage(message, isError = false) {
+      commentMessage.textContent = message;
+      commentMessage.style.color = isError ? "#a33b32" : "#68796e";
     }
 
-    snapshot.forEach((item) => {
-      const data = item.data();
-      const card = document.createElement("article");
-      card.className = "comment-card";
-
-      const person = document.createElement("div");
-      person.className = "comment-person";
-
-      const avatar = document.createElement("img");
-      avatar.className = "comment-avatar";
-      avatar.alt = "Foto profil";
-      avatar.referrerPolicy = "no-referrer";
-      avatar.src = data.photoURL || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23eaf4ee'/%3E%3Ccircle cx='20' cy='15' r='7' fill='%23075638'/%3E%3Cpath d='M7 38c1-9 6-13 13-13s12 4 13 13' fill='%23075638'/%3E%3C/svg%3E";
-
-      const identity = document.createElement("div");
-      identity.append(
-        safeText("strong", data.name || "Pengunjung"),
-        safeText("span", formatDate(data.createdAt), "comment-date")
-      );
-      person.append(avatar, identity);
-      card.append(person, safeText("p", data.text || "", "comment-text"));
-
-      if (currentUser && currentUser.uid === data.uid) {
-        const removeBtn = safeText("button", "Hapus komentar saya", "comment-delete");
-        removeBtn.type = "button";
-        removeBtn.addEventListener("click", async () => {
-          if (!confirm("Hapus komentar ini?")) return;
-          try {
-            await deleteDoc(doc(db, "comments", item.id));
-            showMessage("Komentar berhasil dihapus.");
-          } catch (error) {
-            console.error(error);
-            showMessage("Komentar belum dapat dihapus. Periksa aturan keamanan Firestore.", true);
-          }
-        });
-        card.append(removeBtn);
+    function formatDate(timestamp) {
+      if (!timestamp || typeof timestamp.toDate !== "function") {
+        return "Baru saja";
       }
-      commentList.append(card);
-    });
-  }
 
-  loginBtn.addEventListener("click", async () => {
-    try {
-      showMessage("Membuka login Google...");
-      await signInWithPopup(auth, provider);
-      showMessage("Login Google berhasil.");
-    } catch (error) {
-      console.error(error);
-      showMessage("Login gagal: " + (error.message || "silakan coba kembali."), true);
-    }
-  });
-
-  logoutBtn.addEventListener("click", async () => {
-    try {
-      await signOut(auth);
-      showMessage("Anda sudah keluar.");
-    } catch (error) {
-      console.error(error);
-      showMessage("Tidak dapat keluar. Silakan coba kembali.", true);
-    }
-  });
-
-  commentForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const text = commentText.value.trim();
-    if (!currentUser) {
-      showMessage("Silakan login dengan Google terlebih dahulu.", true);
-      return;
-    }
-    if (!text || text.length > 1000) {
-      showMessage("Komentar wajib diisi dan maksimal 1.000 karakter.", true);
-      return;
+      return new Intl.DateTimeFormat("id-ID", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      }).format(timestamp.toDate());
     }
 
-    sendBtn.disabled = true;
-    sendBtn.textContent = "Mengirim...";
-    try {
-      await addDoc(collection(db, "comments"), {
-        uid: currentUser.uid,
-        name: currentUser.displayName || "Pengunjung",
-        photoURL: currentUser.photoURL || "",
-        text,
-        createdAt: serverTimestamp()
+    function safeText(tag, value, className) {
+      const element = document.createElement(tag);
+
+      if (className) element.className = className;
+
+      element.textContent = value || "";
+      return element;
+    }
+
+    function renderComments(snapshot) {
+      commentList.replaceChildren();
+
+      if (snapshot.empty) {
+        commentList.append(
+          safeText(
+            "div",
+            "Belum ada komentar. Jadilah yang pertama memberikan komentar.",
+            "comment-empty"
+          )
+        );
+        return;
+      }
+
+      snapshot.forEach((item) => {
+        const data = item.data();
+
+        const card = document.createElement("article");
+        card.className = "comment-card";
+
+        const person = document.createElement("div");
+        person.className = "comment-person";
+
+        const avatar = document.createElement("img");
+        avatar.className = "comment-avatar";
+        avatar.alt = "Foto profil";
+        avatar.referrerPolicy = "no-referrer";
+
+        avatar.src = data.photoURL ||
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23eaf4ee'/%3E%3Ccircle cx='20' cy='15' r='7' fill='%23075638'/%3E%3Cpath d='M7 38c1-9 6-13 13-13s12 4 13 13' fill='%23075638'/%3E%3C/svg%3E";
+
+        const identity = document.createElement("div");
+
+        identity.append(
+          safeText("strong", data.name || "Pengunjung"),
+          safeText("span", formatDate(data.createdAt), "comment-date")
+        );
+
+        person.append(avatar, identity);
+
+        card.append(
+          person,
+          safeText("p", data.text || "", "comment-text")
+        );
+
+        if (currentUser && currentUser.uid === data.uid) {
+          const removeBtn = safeText(
+            "button",
+            "Hapus komentar saya",
+            "comment-delete"
+          );
+
+          removeBtn.type = "button";
+
+          removeBtn.addEventListener("click", async () => {
+            if (!confirm("Hapus komentar ini?")) return;
+
+            try {
+              await deleteDoc(doc(db, "comments", item.id));
+              showMessage("Komentar berhasil dihapus.");
+            } catch (error) {
+              console.error(error);
+              showMessage(
+                "Komentar belum dapat dihapus. Periksa aturan keamanan Firestore.",
+                true
+              );
+            }
+          });
+
+          card.append(removeBtn);
+        }
+
+        commentList.append(card);
       });
-      commentText.value = "";
-      showMessage("Terima kasih. Komentar Anda berhasil dikirim.");
-    } catch (error) {
-      console.error(error);
-      showMessage("Komentar gagal dikirim. Periksa koneksi dan Rules Firestore.", true);
-    } finally {
-      sendBtn.disabled = false;
-      sendBtn.textContent = "Kirim komentar";
-    }
-  });
-
-  onAuthStateChanged(auth, (user) => {
-    currentUser = user;
-    loginBtn.hidden = !!user;
-    logoutBtn.hidden = !user;
-    commentForm.hidden = !user;
-
-    if (user) {
-      userStatus.textContent = "Login sebagai " + (user.displayName || user.email || "pengguna Google") + ".";
-    } else {
-      userStatus.textContent = "Anda belum login. Komentar dapat dibaca oleh semua pengunjung.";
     }
 
-    if (commentsUnsubscribe) commentsUnsubscribe();
-    const commentsQuery = query(collection(db, "comments"), orderBy("createdAt", "desc"));
-    commentsUnsubscribe = onSnapshot(commentsQuery, renderComments, (error) => {
-      console.error(error);
-      commentList.replaceChildren(safeText("div", "Komentar belum dapat dimuat. Periksa koneksi dan Rules Firestore.", "comment-empty"));
+    loginBtn.addEventListener("click", async () => {
+      try {
+        showMessage("Membuka login Google...");
+        await signInWithPopup(auth, provider);
+        showMessage("Login Google berhasil.");
+      } catch (error) {
+        console.error(error);
+        showMessage(
+          "Login gagal: " + (error.message || "silakan coba kembali."),
+          true
+        );
+      }
     });
-  });
-</script>
 
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        showMessage("Anda sudah keluar.");
+      } catch (error) {
+        console.error(error);
+        showMessage("Tidak dapat keluar. Silakan coba kembali.", true);
+      }
+    });
 
-<script>
-  document.getElementById("copySiteLink")?.addEventListener("click", async () => {
-    const message = document.getElementById("shareMessage");
-    try {
-      await navigator.clipboard.writeText("https://website-darul-fikr-singkut.pages.dev/");
-      message.textContent = "Tautan berhasil disalin.";
-    } catch (error) {
-      message.textContent = "Silakan salin alamat website dari bilah alamat browser.";
-    }
-  });
-</script>
+    commentForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const text = commentText.value.trim();
+
+      if (!currentUser) {
+        showMessage("Silakan login dengan Google terlebih dahulu.", true);
+        return;
+      }
+
+      if (!text || text.length > 1000) {
+        showMessage(
+          "Komentar wajib diisi dan maksimal 1.000 karakter.",
+          true
+        );
+        return;
+      }
+
+      sendBtn.disabled = true;
+      sendBtn.textContent = "Mengirim...";
+
+      try {
+        await addDoc(collection(db, "comments"), {
+          uid: currentUser.uid,
+          name: currentUser.displayName || "Pengunjung",
+          photoURL: currentUser.photoURL || "",
+          text,
+          createdAt: serverTimestamp()
+        });
+
+        commentText.value = "";
+        showMessage("Terima kasih. Komentar Anda berhasil dikirim.");
+      } catch (error) {
+        console.error(error);
+        showMessage(
+          "Komentar gagal dikirim. Periksa koneksi dan Rules Firestore.",
+          true
+        );
+      } finally {
+        sendBtn.disabled = false;
+        sendBtn.textContent = "Kirim komentar";
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+
+      loginBtn.hidden = !!user;
+      logoutBtn.hidden = !user;
+      commentForm.hidden = !user;
+
+      if (user) {
+        userStatus.textContent =
+          "Login sebagai " +
+          (user.displayName || user.email || "pengguna Google") + ".";
+      } else {
+        userStatus.textContent =
+          "Anda belum login. Komentar dapat dibaca oleh semua pengunjung.";
+      }
+
+      if (commentsUnsubscribe) commentsUnsubscribe();
+
+      const commentsQuery = query(
+        collection(db, "comments"),
+        orderBy("createdAt", "desc")
+      );
+
+      commentsUnsubscribe = onSnapshot(
+        commentsQuery,
+        renderComments,
+        (error) => {
+          console.error(error);
+
+          commentList.replaceChildren(
+            safeText(
+              "div",
+              "Komentar belum dapat dimuat. Periksa koneksi dan Rules Firestore.",
+              "comment-empty"
+            )
+          );
+        }
+      );
+    });
+  </script>
+
+  <!-- TOMBOL SALIN TAUTAN -->
+  <script>
+    document.getElementById("copySiteLink")?.addEventListener(
+      "click",
+      async () => {
+        const message = document.getElementById("shareMessage");
+
+        try {
+          await navigator.clipboard.writeText(
+            "https://website-darul-fikr-singkut.pages.dev/"
+          );
+
+          message.textContent = "Tautan berhasil disalin.";
+        } catch (error) {
+          message.textContent =
+            "Silakan salin alamat website dari bilah alamat browser.";
+        }
+      }
+    );
+  </script>
 
 </body>
 </html>
