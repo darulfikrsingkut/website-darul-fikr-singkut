@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -279,7 +280,7 @@ nav a:focus:after {
   transform:translateY(-3px);
 }
 
-/* JUDUL BAGIAN */
+/* BAGIAN UTAMA */
 main {
   padding:48px 0 20px;
 }
@@ -341,7 +342,7 @@ h2.section-title {
   margin:12px 0;
 }
 
-/* BAGIAN LIMA LEMBAGA */
+/* LIMA LEMBAGA PENDIDIKAN */
 .hero-schools {
   min-width:0;
   padding:0;
@@ -361,7 +362,6 @@ h2.section-title {
   display:none;
 }
 
-/* PERBAIKAN KONTRAS JUDUL UNIT PENDIDIKAN */
 .hero-schools .section-heading .kicker {
   color:#ffe7a0;
   font-size:12px;
@@ -397,7 +397,7 @@ h2.section-title {
   overflow:hidden;
   display:grid;
   grid-template-columns:76px minmax(0,1fr);
-  grid-template-rows:auto auto auto auto;
+  grid-template-rows:auto auto auto;
   column-gap:14px;
   row-gap:1px;
   align-items:center;
@@ -406,8 +406,8 @@ h2.section-title {
   text-align:left;
   text-decoration:none;
   color:inherit;
-  border:1px solid #e4eee6;
-  border-left:4px solid #c9a33b;
+  border:1px solid rgba(255,255,255,.22);
+  border-left:5px solid;
   border-radius:14px;
   box-shadow:0 4px 12px rgba(5,58,37,.055);
   transition:transform .2s ease,box-shadow .2s ease;
@@ -441,7 +441,7 @@ h2.section-title {
 
 .school-icon {
   grid-column:1;
-  grid-row:1 / 5;
+  grid-row:1 / 4;
   width:68px;
   height:68px;
   margin:0;
@@ -478,26 +478,6 @@ h2.section-title {
   text-shadow:none;
 }
 
-/* LABEL TAHUN BERDIRI - DIPERJELAS */
-.tahun {
-  display:inline-block;
-  margin:0 0 4px;
-  padding:3px 11px;
-  border-radius:20px;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:.2px;
-  background:#fff;
-  box-shadow:0 1px 3px rgba(0,0,0,.10);
-}
-
-#lembaga .tahun {
-  font-size:11px;
-  font-weight:800;
-  padding:3px 11px;
-  margin:0 0 4px;
-}
-
 #lembaga .school-status {
   display:inline-block;
   margin:0 0 4px;
@@ -519,116 +499,18 @@ h2.section-title {
   line-height:1.5;
 }
 
-/* LATAR DAN WARNA KHUSUS SETIAP LEMBAGA */
-
-/* MTs */
-#lembaga .school-card.school-mts {
-  background:linear-gradient(110deg,#f3fbf5,#dff2e5);
-  border-color:#b9dfc5;
-  border-left-color:#4b9c68;
-}
-
-#lembaga .school-mts h3 {
-  color:#064b30;
-}
-
-#lembaga .school-mts .tahun {
-  color:#064b30;
-  background:#fff;
-  border:1px solid #79b88b;
-}
-
-#lembaga .school-mts .school-status {
-  color:#075638;
-  background:#e8f6ec;
-  border-color:#b9dfc5;
-}
-
-/* RA */
-#lembaga .school-card.school-ra {
-  background:linear-gradient(110deg,#fffdf7,#fff0d9);
-  border-color:#efdbb4;
-  border-left-color:#c48a2b;
-}
-
-#lembaga .school-ra h3 {
-  color:#70440b;
-}
-
-#lembaga .school-ra .tahun {
-  color:#70440b;
-  background:#fff;
-  border:1px solid #d8ad5c;
-}
-
-#lembaga .school-ra .school-status {
-  color:#70440b;
-  background:#fff7e8;
-  border-color:#efdbb4;
-}
-
-/* RTQ */
-#lembaga .school-card.school-rtq {
-  background:linear-gradient(110deg,#f8f9ff,#e5e9fa);
-  border-color:#cbd3f0;
-  border-left-color:#6577bd;
-}
-
-#lembaga .school-rtq h3 {
-  color:#293e82;
-}
-
-#lembaga .school-rtq .tahun {
-  color:#293e82;
-  background:#fff;
-  border:1px solid #9ba9dc;
-}
-
-#lembaga .school-rtq .school-status {
-  color:#293e82;
-  background:#f0f2ff;
-  border-color:#cbd3f0;
-}
-
-/* MA */
-#lembaga .school-card.school-ma {
-  background:linear-gradient(110deg,#fff8fa,#f9e2e8);
-  border-color:#ecc5d0;
-  border-left-color:#b34b70;
-}
-
-#lembaga .school-ma h3 {
-  color:#792b49;
-}
-
-#lembaga .school-ma .tahun {
-  color:#792b49;
-  background:#fff;
-  border:1px solid #d99aae;
-}
-
-#lembaga .school-ma .school-status {
-  color:#792b49;
-  background:#fff0f4;
-  border-color:#ecc5d0;
-}
-
-/* PONDOK PESANTREN */
+/* GRADASI PONDOK PESANTREN */
 #lembaga .school-card.school-ponpes {
-  background:linear-gradient(110deg,#f0faf3,#dcefe2);
-  border-color:#b9d9c2;
-  border-left-color:#6eaa7d;
+  background:linear-gradient(90deg,
+    #a8d9b6 0%,
+    rgba(168,217,182,.90) 20%,
+    rgba(168,217,182,.48) 55%,
+    rgba(168,217,182,0) 100%);
+  border-color:rgba(110,170,125,.45);
+  border-left-color:#4b9860;
 }
 
-#lembaga .school-ponpes h3 {
-  color:#064b30;
-}
-
-#lembaga .school-ponpes .tahun {
-  color:#064b30;
-  background:#fff;
-  border:1px solid #83b991;
-}
+#lembaga .school-ponpes h3 { color:#064b30; }
 
 #lembaga .school-ponpes .school-status {
   color:#075638;
@@ -636,8 +518,80 @@ h2.section-title {
   border-color:#bfdcc6;
 }
 
-#lembaga .school-ponpes > p:last-child {
-  color:#344b3b;
+/* GRADASI MADRASAH ALIYAH */
+#lembaga .school-card.school-ma {
+  background:linear-gradient(90deg,
+    #e8b8c8 0%,
+    rgba(232,184,200,.90) 20%,
+    rgba(232,184,200,.48) 55%,
+    rgba(232,184,200,0) 100%);
+  border-color:rgba(179,75,112,.35);
+  border-left-color:#b34b70;
+}
+
+#lembaga .school-ma h3 { color:#792b49; }
+
+#lembaga .school-ma .school-status {
+  color:#792b49;
+  background:#fff0f4;
+  border-color:#ecc5d0;
+}
+
+/* GRADASI MTs */
+#lembaga .school-card.school-mts {
+  background:linear-gradient(90deg,
+    #a8cce5 0%,
+    rgba(168,204,229,.90) 20%,
+    rgba(168,204,229,.48) 55%,
+    rgba(168,204,229,0) 100%);
+  border-color:rgba(75,140,180,.35);
+  border-left-color:#3982aa;
+}
+
+#lembaga .school-mts h3 { color:#064b68; }
+
+#lembaga .school-mts .school-status {
+  color:#075638;
+  background:#e8f6ec;
+  border-color:#b9dfc5;
+}
+
+/* GRADASI RA */
+#lembaga .school-card.school-ra {
+  background:linear-gradient(90deg,
+    #f1d39a 0%,
+    rgba(241,211,154,.90) 20%,
+    rgba(241,211,154,.48) 55%,
+    rgba(241,211,154,0) 100%);
+  border-color:rgba(196,138,43,.35);
+  border-left-color:#c48a2b;
+}
+
+#lembaga .school-ra h3 { color:#70440b; }
+
+#lembaga .school-ra .school-status {
+  color:#70440b;
+  background:#fff7e8;
+  border-color:#efdbb4;
+}
+
+/* GRADASI RTQ */
+#lembaga .school-card.school-rtq {
+  background:linear-gradient(90deg,
+    #bdc6eb 0%,
+    rgba(189,198,235,.90) 20%,
+    rgba(189,198,235,.48) 55%,
+    rgba(189,198,235,0) 100%);
+  border-color:rgba(101,119,189,.35);
+  border-left-color:#6577bd;
+}
+
+#lembaga .school-rtq h3 { color:#293e82; }
+
+#lembaga .school-rtq .school-status {
+  color:#293e82;
+  background:#f0f2ff;
+  border-color:#cbd3f0;
 }
 
 /* PROGRAM DAN KEGIATAN */
@@ -899,7 +853,7 @@ footer .small {
   font-size:12px;
 }
 
-/* TOMBOL KEMBALI KE ATAS */
+/* KEMBALI KE ATAS */
 .back-top {
   position:fixed;
   right:20px;
@@ -1076,6 +1030,7 @@ footer .small {
 
 <div class="topline"></div>
 
+<!-- HEADER -->
 <header>
   <img src="Yayasan%20Darul%20Fikr%20Singkut%20Crest.png"
        alt="Logo Yayasan Darul Fikr Singkut" class="logo">
@@ -1086,6 +1041,7 @@ footer .small {
   </div>
 </header>
 
+<!-- NAVIGASI -->
 <nav aria-label="Navigasi utama">
   <a href="#beranda">Beranda</a>
   <a href="#lembaga">Lembaga</a>
@@ -1097,6 +1053,7 @@ footer .small {
 
 <!-- BERANDA -->
 <div class="hero" id="beranda">
+
   <div class="hero-layout">
 
     <div class="hero-content">
@@ -1110,16 +1067,53 @@ footer .small {
     </div>
 
     <!-- LIMA LEMBAGA PENDIDIKAN -->
-    <section id="lembaga" class="hero-schools" aria-label="Lima lembaga pendidikan Yayasan Darul Fikr Singkut">
+    <section id="lembaga" class="hero-schools"
+      aria-label="Lima lembaga pendidikan Yayasan Darul Fikr Singkut">
 
       <div class="section-heading">
         <p class="kicker">Unit Pendidikan</p>
         <h2 class="section-title">Lembaga Pendidikan</h2>
-        <p class="section-intro">Yayasan Darul Fikr Singkut menaungi lima lembaga pendidikan yang berkomitmen memberikan pelayanan pendidikan dan membangun generasi berilmu, beriman, serta berakhlakul karimah.</p>
+        <p class="section-intro">
+          Yayasan Darul Fikr Singkut menaungi lima lembaga pendidikan
+          yang berkomitmen memberikan pelayanan pendidikan dan
+          membangun generasi berilmu, beriman, serta berakhlakul karimah.
+        </p>
       </div>
 
       <div class="cards">
 
+        <!-- 1. PONDOK PESANTREN -->
+        <article class="school-card school-ponpes">
+
+          <div class="school-icon">
+            <img src="icon-ponpes.png.png"
+                 alt="Logo Pondok Pesantren Darul Fikr">
+          </div>
+
+          <h3>Pondok Pesantren Darul Fikr</h3>
+
+          <span class="school-status">Website Segera Hadir</span>
+
+          <p>Lembaga pendidikan Islam berbasis pesantren yang berfokus pada pembinaan ilmu agama, ibadah, kedisiplinan, dan akhlakul karimah santri.</p>
+
+        </article>
+
+        <!-- 2. MADRASAH ALIYAH -->
+        <article class="school-card school-ma">
+
+          <div class="school-icon">
+            <img src="icon-ma.png.png" alt="Logo MA Darul Fikr">
+          </div>
+
+          <h3>MA Darul Fikr</h3>
+
+          <span class="school-status">Website Segera Hadir</span>
+
+          <p>Madrasah Aliyah yang menyelenggarakan pendidikan jenjang menengah atas dengan penguatan ilmu pengetahuan dan nilai-nilai Islam.</p>
+
+        </article>
+
+        <!-- 3. MADRASAH TSANAWIYAH -->
         <a class="school-card school-mts"
            href="https://website-mts-al-fikr.pages.dev"
            target="_blank"
@@ -1131,61 +1125,46 @@ footer .small {
           </div>
 
           <h3>MTs Al-Fikr Cianjur Singkut</h3>
-          <p class="tahun">Berdiri Tahun 2011</p>
+
           <span class="school-status">Kunjungi Website MTs ↗</span>
+
           <p>Madrasah Tsanawiyah yang menyelenggarakan pendidikan jenjang menengah pertama dengan perpaduan ilmu pengetahuan umum dan keagamaan.</p>
+
         </a>
 
+        <!-- 4. RAUDHATUL ATHFAL -->
         <article class="school-card school-ra">
 
           <div class="school-icon">
-            <img src="icon-ra.png.png" alt="Ikon RA Darul Fikr">
+            <img src="icon-ra.png.png" alt="Logo RA Darul Fikr">
           </div>
 
           <h3>RA Darul Fikr</h3>
-          <p class="tahun">Berdiri Tahun 2018</p>
+
           <span class="school-status">Website Segera Hadir</span>
+
           <p>Raudhatul Athfal Darul Fikr merupakan lembaga pendidikan anak usia dini berciri khas Islam yang menanamkan dasar keimanan, akhlak, dan kemandirian.</p>
+
         </article>
 
+        <!-- 5. RAUDHATUT TARBIYATIL QURAN -->
         <article class="school-card school-rtq">
 
           <div class="school-icon">
-            <img src="icon-rtq.png.png" alt="Ikon RTQ">
+            <img src="icon-rtq.png.png" alt="Logo RTQ Darul Fikr">
           </div>
 
           <h3>Raudhatut Tarbiyatil Quran (RTQ)</h3>
-          <p class="tahun">Berdiri Tahun 2019</p>
+
           <span class="school-status">Website Segera Hadir</span>
+
           <p>Lembaga pendidikan Al-Qur'an yang membimbing generasi muda agar mampu membaca, memahami, dan mencintai Al-Qur'an.</p>
-        </article>
 
-        <article class="school-card school-ma">
-
-          <div class="school-icon">
-            <img src="icon-ma.png.png" alt="Ikon MA Darul Fikr">
-          </div>
-
-          <h3>MA Darul Fikr</h3>
-          <p class="tahun">Berdiri Tahun 2023</p>
-          <span class="school-status">Website Segera Hadir</span>
-          <p>Madrasah Aliyah yang menyelenggarakan pendidikan jenjang menengah atas dengan penguatan ilmu pengetahuan dan nilai-nilai Islam.</p>
-        </article>
-
-        <article class="school-card school-ponpes">
-
-          <div class="school-icon">
-            <img src="icon-ponpes.png.png" alt="Ikon Pondok Pesantren Darul Fikr">
-          </div>
-
-          <h3>Pondok Pesantren Darul Fikr</h3>
-          <p class="tahun">Berdiri Tahun 2024</p>
-          <span class="school-status">Website Segera Hadir</span>
-          <p>Lembaga pendidikan Islam berbasis pesantren yang berfokus pada pembinaan ilmu agama, ibadah, kedisiplinan, dan akhlakul karimah santri.</p>
         </article>
 
       </div>
     </section>
+
   </div>
 </div>
 
@@ -1197,6 +1176,7 @@ footer .small {
     <div class="section-heading">
       <p class="kicker">Dokumentasi Yayasan</p>
       <h2 class="section-title">Kegiatan Yayasan Darul Fikr Singkut</h2>
+
       <p class="section-intro">
         Dokumentasi kegiatan pendidikan, pembinaan santri,
         dan aktivitas keagamaan Yayasan Darul Fikr Singkut.
@@ -1247,7 +1227,11 @@ footer .small {
     <div class="section-heading">
       <p class="kicker">Aktivitas Yayasan</p>
       <h2 class="section-title">Program dan Kegiatan</h2>
-      <p class="section-intro">Kegiatan pendidikan dan pembinaan dilaksanakan melalui unit-unit pendidikan sesuai jenjang dan kebutuhan peserta didik.</p>
+
+      <p class="section-intro">
+        Kegiatan pendidikan dan pembinaan dilaksanakan melalui
+        unit-unit pendidikan sesuai jenjang dan kebutuhan peserta didik.
+      </p>
     </div>
 
     <div class="program-grid">
@@ -1281,29 +1265,57 @@ footer .small {
     <div class="section-heading">
       <p class="kicker">Suara Masyarakat</p>
       <h2 class="section-title">Komentar dan Saran</h2>
-      <p class="section-intro">Silakan login menggunakan akun Google untuk menyampaikan komentar, saran, atau pertanyaan kepada Yayasan Darul Fikr Singkut. Gunakan bahasa yang santun dan sesuai etika.</p>
+
+      <p class="section-intro">
+        Silakan login menggunakan akun Google untuk menyampaikan
+        komentar, saran, atau pertanyaan kepada Yayasan Darul Fikr Singkut.
+        Gunakan bahasa yang santun dan sesuai etika.
+      </p>
     </div>
 
     <div class="comment-auth">
-      <button type="button" id="googleLoginBtn" class="comment-btn">Masuk dengan Google</button>
-      <button type="button" id="googleLogoutBtn" class="comment-btn secondary" hidden>Keluar</button>
-      <span id="commentUserStatus" class="comment-status">Anda belum login. Komentar dapat dibaca oleh semua pengunjung.</span>
+
+      <button type="button" id="googleLoginBtn" class="comment-btn">
+        Masuk dengan Google
+      </button>
+
+      <button type="button" id="googleLogoutBtn"
+        class="comment-btn secondary" hidden>
+        Keluar
+      </button>
+
+      <span id="commentUserStatus" class="comment-status">
+        Anda belum login. Komentar dapat dibaca oleh semua pengunjung.
+      </span>
+
     </div>
 
     <form id="commentForm" class="comment-form" hidden>
 
-      <label for="commentText"><strong>Tulis komentar Anda</strong></label>
+      <label for="commentText">
+        <strong>Tulis komentar Anda</strong>
+      </label>
 
-      <textarea id="commentText" maxlength="1000" placeholder="Tuliskan komentar atau saran dengan bahasa yang santun..." required></textarea>
+      <textarea id="commentText"
+        maxlength="1000"
+        placeholder="Tuliskan komentar atau saran dengan bahasa yang santun..."
+        required></textarea>
 
       <div>
-        <button type="submit" id="sendCommentBtn" class="comment-btn">Kirim komentar</button>
+        <button type="submit" id="sendCommentBtn" class="comment-btn">
+          Kirim komentar
+        </button>
       </div>
 
-      <span class="comment-status">Maksimal 1.000 karakter. Nama dan foto profil Google akan ditampilkan bersama komentar.</span>
+      <span class="comment-status">
+        Maksimal 1.000 karakter. Nama dan foto profil Google akan
+        ditampilkan bersama komentar.
+      </span>
+
     </form>
 
-    <div id="commentMessage" class="comment-status" role="status" aria-live="polite"></div>
+    <div id="commentMessage" class="comment-status"
+      role="status" aria-live="polite"></div>
 
     <div id="commentList" class="comment-list">
       <div class="comment-empty">Memuat komentar...</div>
@@ -1317,7 +1329,11 @@ footer .small {
     <div class="section-heading">
       <p class="kicker">Hubungi Kami</p>
       <h2 class="section-title">Kontak Yayasan</h2>
-      <p class="section-intro">Untuk informasi lebih lanjut mengenai yayasan dan unit pendidikan, silakan menghubungi pengelola.</p>
+
+      <p class="section-intro">
+        Untuk informasi lebih lanjut mengenai yayasan dan unit pendidikan,
+        silakan menghubungi pengelola.
+      </p>
     </div>
 
     <div class="contact-grid">
@@ -1352,33 +1368,46 @@ footer .small {
 
   <p><strong>YAYASAN DARUL FIKR SINGKUT</strong></p>
   <p>Jl. Pinang RW 07 Cianjur Singkut</p>
-  <p class="small">© 2026 Yayasan Darul Fikr Singkut. Seluruh Hak Cipta Dilindungi.</p>
+  <p class="small">
+    © 2026 Yayasan Darul Fikr Singkut. Seluruh Hak Cipta Dilindungi.
+  </p>
 
   <div class="share-tools" aria-label="Bagikan website">
 
     <a id="shareWhatsApp"
        href="https://wa.me/?text=https%3A%2F%2Fwebsite-darul-fikr-singkut.pages.dev%2F"
        target="_blank"
-       rel="noopener">Bagikan WhatsApp</a>
+       rel="noopener">
+       Bagikan WhatsApp
+    </a>
 
     <a id="shareFacebook"
        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwebsite-darul-fikr-singkut.pages.dev%2F"
        target="_blank"
-       rel="noopener">Bagikan Facebook</a>
+       rel="noopener">
+       Bagikan Facebook
+    </a>
 
-    <button type="button" id="copySiteLink">Salin tautan website</button>
+    <button type="button" id="copySiteLink">
+      Salin tautan website
+    </button>
 
-    <span id="shareMessage" class="comment-status" style="color:#f2e2ad"></span>
+    <span id="shareMessage" class="comment-status"
+      style="color:#f2e2ad"></span>
 
   </div>
 
 </footer>
 
-<a class="back-top" href="#beranda" aria-label="Kembali ke atas">↑</a>
+<a class="back-top" href="#beranda"
+   aria-label="Kembali ke atas">↑</a>
 
 <!-- FIREBASE: LOGIN GOOGLE DAN KOMENTAR -->
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+
+import {
+  initializeApp
+} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 
 import {
   getAuth,
@@ -1414,7 +1443,9 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const provider = new GoogleAuthProvider();
-provider.setCustomParameters({ prompt:"select_account" });
+provider.setCustomParameters({
+  prompt:"select_account"
+});
 
 const loginBtn = document.getElementById("googleLoginBtn");
 const logoutBtn = document.getElementById("googleLogoutBtn");
@@ -1456,6 +1487,7 @@ function safeText(tag,value,className) {
 }
 
 function renderComments(snapshot) {
+
   commentList.replaceChildren();
 
   if (snapshot.empty) {
@@ -1470,6 +1502,7 @@ function renderComments(snapshot) {
   }
 
   snapshot.forEach((item) => {
+
     const data = item.data();
 
     const card = document.createElement("article");
@@ -1501,6 +1534,7 @@ function renderComments(snapshot) {
     );
 
     if (currentUser && currentUser.uid === data.uid) {
+
       const removeBtn = safeText(
         "button",
         "Hapus komentar saya",
@@ -1510,17 +1544,24 @@ function renderComments(snapshot) {
       removeBtn.type = "button";
 
       removeBtn.addEventListener("click",async () => {
+
         if (!confirm("Hapus komentar ini?")) return;
 
         try {
+
           await deleteDoc(doc(db,"comments",item.id));
+
           showMessage("Komentar berhasil dihapus.");
+
         } catch (error) {
+
           console.error(error);
+
           showMessage(
             "Komentar belum dapat dihapus. Periksa aturan keamanan Firestore.",
             true
           );
+
         }
       });
 
@@ -1528,51 +1569,78 @@ function renderComments(snapshot) {
     }
 
     commentList.append(card);
+
   });
 }
 
 /* LOGIN GOOGLE */
 loginBtn.addEventListener("click",async () => {
+
   try {
+
     showMessage("Membuka login Google...");
+
     await signInWithPopup(auth,provider);
+
     showMessage("Login Google berhasil.");
+
   } catch (error) {
+
     console.error(error);
+
     showMessage(
       "Login gagal: " + (error.message || "silakan coba kembali."),
       true
     );
+
   }
 });
 
 /* LOGOUT */
 logoutBtn.addEventListener("click",async () => {
+
   try {
+
     await signOut(auth);
+
     showMessage("Anda sudah keluar.");
+
   } catch (error) {
+
     console.error(error);
-    showMessage("Tidak dapat keluar. Silakan coba kembali.",true);
+
+    showMessage(
+      "Tidak dapat keluar. Silakan coba kembali.",
+      true
+    );
+
   }
 });
 
 /* KIRIM KOMENTAR */
 commentForm.addEventListener("submit",async (event) => {
+
   event.preventDefault();
 
   const text = commentText.value.trim();
 
   if (!currentUser) {
-    showMessage("Silakan login dengan Google terlebih dahulu.",true);
+
+    showMessage(
+      "Silakan login dengan Google terlebih dahulu.",
+      true
+    );
+
     return;
   }
 
   if (!text || text.length > 1000) {
+
     showMessage(
       "Komentar wajib diisi dan maksimal 1.000 karakter.",
       true
     );
+
     return;
   }
 
@@ -1580,31 +1648,44 @@ commentForm.addEventListener("submit",async (event) => {
   sendBtn.textContent = "Mengirim...";
 
   try {
+
     await addDoc(collection(db,"comments"), {
+
       uid:currentUser.uid,
       name:currentUser.displayName || "Pengunjung",
       photoURL:currentUser.photoURL || "",
       text,
       createdAt:serverTimestamp()
+
     });
 
     commentText.value = "";
-    showMessage("Terima kasih. Komentar Anda berhasil dikirim.");
+
+    showMessage(
+      "Terima kasih. Komentar Anda berhasil dikirim."
+    );
 
   } catch (error) {
+
     console.error(error);
+
     showMessage(
       "Komentar gagal dikirim. Periksa koneksi dan Rules Firestore.",
       true
     );
+
   } finally {
+
     sendBtn.disabled = false;
     sendBtn.textContent = "Kirim komentar";
+
   }
+
 });
 
 /* STATUS LOGIN DAN PEMUATAN KOMENTAR */
 onAuthStateChanged(auth,(user) => {
+
   currentUser = user;
 
   loginBtn.hidden = !!user;
@@ -1612,13 +1693,17 @@ onAuthStateChanged(auth,(user) => {
   commentForm.hidden = !user;
 
   if (user) {
+
     userStatus.textContent =
       "Login sebagai " +
       (user.displayName || user.email || "pengguna Google") +
       ".";
+
   } else {
+
     userStatus.textContent =
       "Anda belum login. Komentar dapat dibaca oleh semua pengunjung.";
+
   }
 
   if (commentsUnsubscribe) {
@@ -1634,6 +1719,7 @@ onAuthStateChanged(auth,(user) => {
     commentsQuery,
     renderComments,
     (error) => {
+
       console.error(error);
 
       commentList.replaceChildren(
@@ -1643,17 +1729,23 @@ onAuthStateChanged(auth,(user) => {
           "comment-empty"
         )
       );
+
     }
   );
+
 });
+
 </script>
 
 <!-- SALIN TAUTAN WEBSITE -->
 <script>
+
 document.getElementById("copySiteLink")?.addEventListener("click",async () => {
+
   const message = document.getElementById("shareMessage");
 
   try {
+
     await navigator.clipboard.writeText(
       "https://website-darul-fikr-singkut.pages.dev/"
     );
@@ -1661,10 +1753,14 @@ document.getElementById("copySiteLink")?.addEventListener("click",async () => {
     message.textContent = "Tautan berhasil disalin.";
 
   } catch (error) {
+
     message.textContent =
       "Silakan salin alamat website dari bilah alamat browser.";
+
   }
+
 });
+
 </script>
 
 </body>
